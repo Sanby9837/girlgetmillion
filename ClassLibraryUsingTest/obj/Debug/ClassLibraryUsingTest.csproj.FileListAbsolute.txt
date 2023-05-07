@@ -1,0 +1,6 @@
+D:\2023girlgetmillion\bili\ConsoleApp\ClassLibraryUsingTest\bin\Debug\ClassLibraryUsingTest.dll
+D:\2023girlgetmillion\bili\ConsoleApp\ClassLibraryUsingTest\bin\Debug\ClassLibraryUsingTest.pdb
+D:\2023girlgetmillion\bili\ConsoleApp\ClassLibraryUsingTest\obj\Debug\ClassLibraryUsingTest.csproj.AssemblyReference.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ClassLibraryUsingTest\obj\Debug\ClassLibraryUsingTest.csproj.CoreCompileInputs.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ClassLibraryUsingTest\obj\Debug\ClassLibraryUsingTest.dll
+D:\2023girlgetmillion\bili\ConsoleApp\ClassLibraryUsingTest\obj\Debug\ClassLibraryUsingTest.pdb

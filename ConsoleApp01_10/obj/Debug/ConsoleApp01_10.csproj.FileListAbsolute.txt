@@ -1,0 +1,11 @@
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\bin\Debug\ConsoleApp01_10.exe.config
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\bin\Debug\ConsoleApp01_10.exe
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\bin\Debug\ConsoleApp01_10.pdb
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\bin\Debug\ClassLibraryUsingTest.dll
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\bin\Debug\ClassLibraryUsingTest.pdb
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\obj\Debug\ConsoleApp01_10.csproj.AssemblyReference.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\obj\Debug\ConsoleApp01_10.csproj.SuggestedBindingRedirects.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\obj\Debug\ConsoleApp01_10.csproj.CoreCompileInputs.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\obj\Debug\ConsoleApp01_10.csproj.CopyComplete
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\obj\Debug\ConsoleApp01_10.exe
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp01_10\obj\Debug\ConsoleApp01_10.pdb
