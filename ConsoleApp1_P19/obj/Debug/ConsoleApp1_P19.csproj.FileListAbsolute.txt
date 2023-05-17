@@ -1,0 +1,16 @@
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\bin\Debug\ConsoleApp1_P19.exe.config
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\bin\Debug\ConsoleApp1_P19.exe
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\bin\Debug\ConsoleApp1_P19.pdb
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.csproj.AssemblyReference.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.csproj.SuggestedBindingRedirects.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.csproj.CoreCompileInputs.cache
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.exe
+D:\2023girlgetmillion\bili\ConsoleApp\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.pdb
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\bin\Debug\ConsoleApp1_P19.exe.config
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\bin\Debug\ConsoleApp1_P19.exe
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\bin\Debug\ConsoleApp1_P19.pdb
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.csproj.AssemblyReference.cache
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.csproj.SuggestedBindingRedirects.cache
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.csproj.CoreCompileInputs.cache
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.exe
+D:\2023girlgetmillion\bili\Sanby9837girlgetmillion\ConsoleApp1_P19\obj\Debug\ConsoleApp1_P19.pdb
