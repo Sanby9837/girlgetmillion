@@ -13,6 +13,7 @@ namespace ConsoleApp1_P19
             Console.WriteLine("go to ???");
             string go = Console.ReadLine();
 
+           
             switch (go)
             {
                 case "19":
@@ -28,21 +29,14 @@ namespace ConsoleApp1_P19
                 case "23":
                     P23();
                     break;
+                case "24":
+                    P24();
+                    break;
                 default:
                     break;
             }
-
+  
         }
-
-
-
-
-
-
-
-
-
-
 
         /// <summary>
         /// P19&20.怎麼讓使用者自己賦值
@@ -76,7 +70,8 @@ namespace ConsoleApp1_P19
         }
 
         /// <summary>
-        /// P22 算數運算符 中文90、數學80、英文67，求平均分數
+        /// P22 算數運算符
+        /// 中文90、數學80、英文67，求平均分數
         /// 計算半徑為5的圓，該面積和周長為何 pi=3.14
         /// </summary>
         static void P22()
@@ -96,7 +91,8 @@ namespace ConsoleApp1_P19
         }
 
         /// <summary>
-        /// P23 T-shirt 一件35，褲子一件120，請設計讓使用者自已輸入購買件數(3;2、345;303.6)，且試算價格，並顯示給予折扣8.8折後價格
+        /// P23  算數運算符練習
+        /// T-shirt 一件35，褲子一件120，請設計讓使用者自已輸入購買件數(3;2、345;303.6)，且試算價格，並顯示給予折扣8.8折後價格
         /// </summary>
         static void P23()
         {
@@ -127,5 +123,37 @@ namespace ConsoleApp1_P19
             Console.WriteLine($"您購買的原價是{shirtPrice * shirtCount + pantPrice * pantCount}，折扣後價格為{(shirtPrice * shirtCount + pantPrice * pantCount) * 0.88} ");
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// P24 類型轉換
+        /// </summary>
+        static void P24()
+        {
+            int n24_1 = 10;
+            int n24_2 = 3;
+            // 這樣d24的類型還是int整數
+            double d24 = n24_1 / n24_2;
+            Console.WriteLine($"d24的值是{d24}") ;  
+            Console.ReadKey();
+
+            int n24_3 = 5;
+            double n24_4 = 2;
+            // 這樣d24_1的類型會變更為double小數類型
+            double d24_1 = n24_3 / n24_4;
+            Console.WriteLine($"d24_1的值是{d24_1}");
+            Console.ReadKey();
+
+            int n24_5 = 10;
+            int n24_6 = 3;
+            // 這樣d24_2的類型，因為*1.0，故也可以變為double小數類型
+            double d24_2 = n24_5 * 1.0 / n24_6;
+            // 新的寫法，$" 字串+佔位符{}中間可以直接放值 冒號後面放表達方式 "
+            Console.WriteLine($"d24_2的值{d24_2:0.00}");
+            // 佔位符{}中間放第幾的位置的文字 冒號後面放表達方式
+            Console.WriteLine("d24_2的值有小術後兩位的結果{0:0.00}", d24_2);
+            Console.ReadKey();
+        }
+
+
     }
 }
