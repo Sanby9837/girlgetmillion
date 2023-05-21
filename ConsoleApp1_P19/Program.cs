@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace ConsoleApp1_P19
             Console.WriteLine("go to ???");
             string go = Console.ReadLine();
 
-           
+
             switch (go)
             {
                 case "19":
@@ -32,10 +33,19 @@ namespace ConsoleApp1_P19
                 case "24":
                     P24();
                     break;
+                case "26":
+                    P26();
+                    break;
+                case "28":
+                    P28();
+                    break;
+                case "29":
+                    P29();
+                    break;
                 default:
                     break;
             }
-  
+
         }
 
         /// <summary>
@@ -125,7 +135,7 @@ namespace ConsoleApp1_P19
         }
 
         /// <summary>
-        /// P24 類型轉換
+        /// P23 類型轉換
         /// </summary>
         static void P24()
         {
@@ -133,7 +143,7 @@ namespace ConsoleApp1_P19
             int n24_2 = 3;
             // 這樣d24的類型還是int整數
             double d24 = n24_1 / n24_2;
-            Console.WriteLine($"d24的值是{d24}") ;  
+            Console.WriteLine($"d24的值是{d24}");
             Console.ReadKey();
 
             int n24_3 = 5;
@@ -154,6 +164,123 @@ namespace ConsoleApp1_P19
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// P26
+        /// 1.輸入框輸入幾天後，顯示幾周幾天
+        /// 2.輸入框輸入秒數，顯示幾天幾時幾分幾秒
+        /// </summary>
+        static void P26()
+        {
+            //1.輸入框輸入幾天後，顯示幾周幾天
+            Console.WriteLine("請入計算天數，幫您換算為 X 周 X 天");
+            string dayPutString = Console.ReadLine();
 
+            //將字串轉為數值
+            int dayPut = Convert.ToInt32(dayPutString);
+
+            //將天數換成幾周幾天
+            int weekResult = dayPut / 7;
+            int dayResult = dayPut % 7;
+
+            //印出來
+            Console.WriteLine($"結果是{weekResult}周{dayResult}天");
+            Console.ReadKey();
+
+            // 2.輸入框輸入秒數，顯示幾天幾時幾分幾秒，並將字串轉為數值
+            Console.WriteLine("請入計算秒數，幫您換算為X天X時X分X秒");
+            int secPut = Convert.ToInt32(Console.ReadLine());
+
+            //將秒數換成幾天，一天有84600秒
+            int days = secPut / 86400;
+
+            //剩餘的秒數
+            int secs = secPut % 86400;
+
+            //將秒數換成幾小時，一小時3600秒
+            int hours = secs / 3600;
+            secs = secs % 3600;
+
+            //將秒數換成幾分鐘，一分鐘60秒
+            int mins = secs / 60;
+            secs = secs % 60;
+
+            //印出來
+            Console.WriteLine($"結果是{days}天{hours}時{mins}分{secs}秒");
+            Console.ReadKey();
+
+
+
+        }
+
+        /// <summary>
+        /// P28 加加使用方式
+        /// 1.變數++
+        /// </summary>
+        static void P28()
+        {
+            int numberP28_1 = 10;
+            int resultP28_1 = 10 + numberP28_1++;
+            int resultP28_3 = 10 + numberP28_1;
+
+            Console.WriteLine($"我是單純++的值{resultP28_3}");
+            Console.WriteLine($"我是單純++的值{numberP28_1}");
+            Console.ReadKey();
+
+            Console.WriteLine($"P28_1 =10 + numberP28_1++ ={resultP28_1}");
+            Console.ReadKey();
+
+            int numberP28_2 = 10;
+            int resultP28_2 = 10 + ++numberP28_2;
+            Console.WriteLine($"P28_2 =10 + ++numberP28_2 ={resultP28_2}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 關係運算符(布林值)
+        /// 邏輯運算符
+        /// </summary>
+        static void P29()
+        {
+            // and 全部都是t就是t
+            // &
+            // &&
+            var sanby = 27;
+            var woody = 32;
+            bool is_30 = sanby > 30;
+
+            bool is_30_2 = sanby > 30 & woody > 30;
+
+            bool is_30_3 = woody > 30 && sanby > 30;
+            bool is_30_4 = sanby > 30 && woody > 30;
+
+            // or 任一
+            // |
+            // ||
+            // true
+            bool is_30_5 = woody > 30 || sanby > 30;
+            // true
+            bool is_30_6 = sanby > 30 || woody > 30;
+
+            // 相反
+            // !
+            bool is_30_7 = !is_30_5;
+
+            if (!is_30_7)
+            {
+                Console.WriteLine($"is_30_7:::{is_30_7}");
+            }
+
+            Console.ReadKey();
+
+            //關係運算符
+            bool b_P29 = 1500 > 1;
+            Console.WriteLine(b_P29);
+            Console.ReadKey(true);
+
+            //邏輯運算符
+            bool b_P29_1 = 1500 > 1;
+            Console.WriteLine(b_P29);
+            Console.ReadKey(true);
+        }
     }
 }
