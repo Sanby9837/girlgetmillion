@@ -42,6 +42,9 @@ namespace ConsoleApp1_P19
                 case "29":
                     P29();
                     break;
+                case "30":
+                    P30();
+                    break;
                 default:
                     break;
             }
@@ -209,7 +212,6 @@ namespace ConsoleApp1_P19
             Console.ReadKey();
 
 
-
         }
 
         /// <summary>
@@ -242,45 +244,65 @@ namespace ConsoleApp1_P19
         static void P29()
         {
             // and 全部都是t就是t
-            // &
+            // & 
             // &&
             var sanby = 27;
             var woody = 32;
-            bool is_30 = sanby > 30;
+            bool P29_1 = sanby > 30;
+            bool P29_2 = sanby > 30 & woody > 30;
+            bool P29_3 = woody > 30 && sanby > 30;
+            bool P29_4 = sanby > 30 && woody > 30;
+            Console.WriteLine($"P29_1  {P29_1},P29_2  {P29_2},P29_3  {P29_3},P29_4  {P29_4}");
+            Console.ReadKey();
 
-            bool is_30_2 = sanby > 30 & woody > 30;
-
-            bool is_30_3 = woody > 30 && sanby > 30;
-            bool is_30_4 = sanby > 30 && woody > 30;
 
             // or 任一
             // |
             // ||
-            // true
-            bool is_30_5 = woody > 30 || sanby > 30;
-            // true
-            bool is_30_6 = sanby > 30 || woody > 30;
+            bool P29_5 = woody > 30 || sanby > 30;
+            bool P29_6 = sanby > 30 || woody > 30;
+
+            Console.WriteLine($"P29_5  {P29_5},P29_6  {P29_6}");
+            Console.ReadKey();
+
 
             // 相反
             // !
-            bool is_30_7 = !is_30_5;
+            bool P29_7 = !P29_5;
 
-            if (!is_30_7)
+            if (!P29_7)
             {
-                Console.WriteLine($"is_30_7:::{is_30_7}");
+                Console.WriteLine($"P29_7:::{P29_7}");
             }
-
             Console.ReadKey();
 
-            //關係運算符
+            //關係運算符 > < >= <= == !=(不等於)
             bool b_P29 = 1500 > 1;
             Console.WriteLine(b_P29);
             Console.ReadKey(true);
 
-            //邏輯運算符
+            //邏輯運算符 && || !
             bool b_P29_1 = 1500 > 1;
-            Console.WriteLine(b_P29);
+            Console.WriteLine(b_P29_1);
             Console.ReadKey(true);
+        }
+        
+        /// <summary>
+        /// 閏年判斷小工具
+        /// </summary>
+        static void P30()
+        {
+            //1.輸入框輸入年份，並將字串轉為數值
+            Console.WriteLine("請入判斷年份");
+            int P30_year = Convert.ToInt32(Console.ReadLine());
+
+            //閏年的判斷邏輯
+            //年份可以被400整除，或年份可以被4整除但不能被100整除
+            bool P30_chcek = ( P30_year % 400 == 0 ) || ( P30_year % 4 == 0 && P30_year % 100 != 0);
+
+            //印出來
+            Console.WriteLine($"結果是{P30_chcek}");
+            Console.ReadKey();
         }
     }
 }
