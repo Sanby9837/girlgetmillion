@@ -55,6 +55,9 @@ namespace ConsoleApp1_P31
                 case "44":
                     P44();
                     break;
+                case "45":
+                    P45();
+                    break;
 
                 default:
                     break;
@@ -610,6 +613,36 @@ namespace ConsoleApp1_P31
 
 
             //提供輸入y或n，如果不是y或n就一直重新輸入
+
+            //bool p44_InputCheck = true;
+            //string p44_Input = "";
+            //while (p44_InputCheck)
+            //{
+            //    Console.WriteLine("請輸入y或n");
+            //    p44_Input = Console.ReadLine();
+
+            //    if (p44_Input == "y" || p44_Input == "n")
+            //    {
+            //        p44_InputCheck = false;
+            //    }
+            //}
+
+            string p44_Input = "";
+            while (p44_Input != "y" && p44_Input != "n")
+            {
+                Console.WriteLine("請輸入y或n");
+                p44_Input = Console.ReadLine();
+            }
+            Console.WriteLine($"輸入值為{p44_Input}正確");
+            Console.ReadKey();
+        }
+        
+        /// <summary>
+        /// P45 do-while循環
+        /// </summary>
+        static void P45()
+        {
+
         }
     }
 }
