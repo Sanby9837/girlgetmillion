@@ -43,6 +43,18 @@ namespace ConsoleApp1_P31
                 case "40":
                     P40();
                     break;
+                case "41":
+                    P41();
+                    break;
+                case "42":
+                    P42();
+                    break;
+                case "43":
+                    P43();
+                    break;
+                case "44":
+                    P44();
+                    break;
 
                 default:
                     break;
@@ -443,11 +455,161 @@ namespace ConsoleApp1_P31
         }
 
         /// <summary>
-        /// 
+        /// P41 循環結構(while)
         /// </summary>
         static void P41()
         {
+            //題目:向控制台打印10遍，下次考試一定要細心
 
+            int p41_Counts = 0;
+            while (p41_Counts < 10)
+            {
+                Console.WriteLine($"下次考試一定要細心{p41_Counts}");
+                p41_Counts += 1;
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P42 循環結構(while) 練習題
+        /// </summary>
+        static void P42()
+        {
+            //題目:求1加到100的合
+
+            int p42_Counts = 1;
+            int p42_Sum = 0;
+            while (p42_Counts < 101)
+            {
+                p42_Sum = p42_Sum + p42_Counts++;
+            }
+            Console.WriteLine($"1到100的和{p42_Sum}");
+            Console.ReadKey();
+
+            //break:case中跳出執行序、跳出當前while循環
+            //輸入帳號密碼，帳號admin、密碼8888顯示登入成功，若錯誤，當作失敗重新輸入
+            //條件:帳號密碼符合
+            //循環邏輯:輸入帳號密碼，判斷密碼是否正確
+
+            string p42_LoginName = "";
+            string p42_LoginPass = "";
+            bool p42_LoginCheck = true;
+
+            while (p42_LoginCheck)
+            {
+                Console.WriteLine("請輸入帳號");
+                p42_LoginName = Console.ReadLine();
+                Console.WriteLine("請輸入密碼");
+                p42_LoginPass = Console.ReadLine();
+
+                if (p42_LoginName == "admin" && p42_LoginPass == "8888")
+                {
+                    p42_LoginCheck = false;
+                }
+                else
+                {
+                    Console.WriteLine("登入失敗，請重新登入");
+                    Console.ReadKey();
+                }
+            }
+            Console.WriteLine("登入成功");
+            Console.ReadKey();
+
+            //--------------------
+            //老師寫的
+            //string p42_LoginName_T = "";
+            //string p42_LoginPass_T = "";
+
+            //while (p42_LoginName_T != "admin" || p42_LoginPass_T != "8888")
+            //{
+            //    Console.WriteLine("請輸入帳號");
+            //    p42_LoginName_T = Console.ReadLine();
+            //    Console.WriteLine("請輸入密碼");
+            //    p42_LoginPass_T = Console.ReadLine();
+            //}
+            //Console.WriteLine("登入成功");
+            //Console.ReadKey();
+
+        }
+
+        /// <summary>
+        /// P43 循環結構(while) 練習題-1
+        /// </summary>
+        static void P43()
+        {
+            //題目:輸入班級人數，依次輸入成績，計算平均成績、總成績
+            //條件:輸入的人數到達正確數字
+            //循環邏輯:輸入成績，並加總成績
+
+            Console.WriteLine("請輸入班級人數");
+            int p43_CountsPP = Convert.ToInt32(Console.ReadLine());
+            int p43_CountsppCheck = 1;
+            int p43_ScoreSum = 0;
+            int p43_ScoreInput = 0;
+
+            while (p43_CountsppCheck <= p43_CountsPP)
+            {
+                Console.WriteLine($"請輸入第{p43_CountsppCheck}位的成績");
+                p43_ScoreInput = Convert.ToInt32(Console.ReadLine());  //可以直接在這邊宣告?
+                p43_ScoreSum = p43_ScoreSum + p43_ScoreInput;
+                p43_CountsppCheck++;
+            }
+            Console.WriteLine($"總人數{p43_CountsPP},總成績{p43_ScoreSum},平均成績{p43_ScoreSum / p43_CountsPP}");
+            Console.ReadKey();
+
+
+        }
+
+        /// <summary>
+        /// P44 循環結構(while) 練習題-2、3
+        /// </summary>
+        static void P44()
+        {
+            //詢問是否會做，
+            //回答y可以放學，回答n 再講一遍，再次詢問是否會做
+            //但如果講了10次還不會，就放學
+            //條件:回答不會、或是累計10次以內都不會
+            //循環邏輯:老師再講一次，並詢問是否會了
+
+            int p44_CheckCounts = 1;
+            bool p44_Chooese = true;
+
+            while (p44_Chooese && p44_CheckCounts < 11)
+            {
+                Console.WriteLine($"老師講課中...{p44_CheckCounts}");
+                Console.WriteLine("請問同學，學會了嗎?");
+                string sp44_Chooese_ask = Console.ReadLine();
+
+                if (sp44_Chooese_ask == "y")
+                {
+                    p44_Chooese = false;
+                }
+                else
+                {
+                    p44_CheckCounts++;
+                }
+            }
+            Console.WriteLine("OK，放學囉!");
+            Console.ReadKey();
+
+            //目前是2006年，學校共有80,000人，每年增加25%
+            //請問在第幾年可以達到200,000人?
+            //條件:學生加總達20萬人時
+            //循環方式:學生加總*1.25，年份+1
+
+            int p44_Year = 2006;
+            double p44_StudentCount = 80000;
+
+            while (p44_StudentCount < 200000)
+            {
+                p44_StudentCount *= 1.25;
+                p44_Year++;
+            }
+            Console.WriteLine($"第{p44_Year}學生達到{p44_StudentCount}人");
+            Console.ReadKey();
+
+
+            //提供輸入y或n，如果不是y或n就一直重新輸入
         }
     }
 }
