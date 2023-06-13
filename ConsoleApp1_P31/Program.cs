@@ -58,6 +58,9 @@ namespace ConsoleApp1_P31
                 case "45":
                     P45();
                     break;
+                case "47":
+                    P47();
+                    break;
 
                 default:
                     break;
@@ -669,6 +672,24 @@ namespace ConsoleApp1_P31
             Console.WriteLine("老師:請學生放學囉");
             Console.ReadKey();
 
+        }
+
+        /// <summary>
+        /// P47 do while複習
+        /// </summary>
+        static void P47()
+        {
+            //不斷要求輸入數字，然後顯示數字的兩倍。
+            //如果輸入q則結束程序
+            //條件:輸入值不等於q
+            //循環邏輯:輸入字串，判斷字串不是q，則顯示字串數字*2，判斷字串是q，把A改q
+            //最後顯示:輸入值
+
+            //不斷要求輸入數字(假定輸入的值都不會有錯誤)，
+            //如果輸入end顯示剛剛輸入的數字中最大值，然後結束程序
+            //條件:輸入值不等於end
+            //循環邏輯:輸入字串，判斷字串不是end，字串轉數值如果>較大數值，將字串更新為最大數值
+            //最後顯示:最大數值、輸入值
         }
     }
 }
