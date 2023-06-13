@@ -492,7 +492,7 @@ namespace ConsoleApp1_P31
             //break:case中跳出執行序、跳出當前while循環
             //輸入帳號密碼，帳號admin、密碼8888顯示登入成功，若錯誤，當作失敗重新輸入
             //條件:帳號密碼符合
-            //循環邏輯:輸入帳號密碼，判斷密碼是否正確
+            //循環語法:輸入帳號密碼，判斷密碼是否正確
 
             string p42_LoginName = "";
             string p42_LoginPass = "";
@@ -542,7 +542,7 @@ namespace ConsoleApp1_P31
         {
             //題目:輸入班級人數，依次輸入成績，計算平均成績、總成績
             //條件:輸入的人數到達正確數字
-            //循環邏輯:輸入成績，並加總成績
+            //循環語法:輸入成績，並加總成績
 
             Console.WriteLine("請輸入班級人數");
             int p43_CountsPP = Convert.ToInt32(Console.ReadLine());
@@ -572,7 +572,7 @@ namespace ConsoleApp1_P31
             //回答y可以放學，回答n 再講一遍，再次詢問是否會做
             //但如果講了10次還不會，就放學
             //條件:回答不會、或是累計10次以內都不會
-            //循環邏輯:老師再講一次，並詢問是否會了
+            //循環語法:老師再講一次，並詢問是否會了
 
             int p44_CheckCounts = 1;
             bool p44_Chooese = true;
@@ -598,7 +598,7 @@ namespace ConsoleApp1_P31
             //目前是2006年，學校共有80,000人，每年增加25%
             //請問在第幾年可以達到200,000人?
             //條件:學生加總達20萬人時
-            //循環方式:學生加總*1.25，年份+1
+            //循環語法:學生加總*1.25，年份+1
 
             int p44_Year = 2006;
             double p44_StudentCount = 80000;
@@ -613,35 +613,61 @@ namespace ConsoleApp1_P31
 
 
             //提供輸入y或n，如果不是y或n就一直重新輸入
+            //條件:判斷輸入的值是y或n
+            //循環語法:輸入y or n 判斷
 
-            //bool p44_InputCheck = true;
-            //string p44_Input = "";
-            //while (p44_InputCheck)
-            //{
-            //    Console.WriteLine("請輸入y或n");
-            //    p44_Input = Console.ReadLine();
+            string p44_checkYN = "";
 
-            //    if (p44_Input == "y" || p44_Input == "n")
-            //    {
-            //        p44_InputCheck = false;
-            //    }
-            //}
-
-            string p44_Input = "";
-            while (p44_Input != "y" && p44_Input != "n")
+            while (p44_checkYN !="y" && p44_checkYN != "n")
             {
                 Console.WriteLine("請輸入y或n");
-                p44_Input = Console.ReadLine();
+                p44_checkYN = Console.ReadLine();
             }
-            Console.WriteLine($"輸入值為{p44_Input}正確");
+            Console.WriteLine($"輸入正確啦{p44_checkYN}");
             Console.ReadKey();
         }
-        
+
         /// <summary>
-        /// P45 do-while循環
+        /// P45 循環結構(do while)
         /// </summary>
         static void P45()
         {
+            //明天學生要上台演出，老師說要把演出歌曲重唱一遍
+            //如果滿意學生可以回家。不然就再練習一次，直到滿意
+            //條件:老師不滿意
+            //循環語法:演出歌曲重唱
+
+            //while 先判斷條件，再執行循環語法
+
+            Console.WriteLine("WHILE    老師:請再將歌曲唱一遍");
+            Console.ReadKey();
+            string p45_Kpi_check = "n";
+
+            while (p45_Kpi_check != "y")
+            {
+                Console.WriteLine("學生唱歌中...");
+                Console.ReadKey();
+                Console.WriteLine("學生:老師請問滿意嗎?");
+                p45_Kpi_check = Console.ReadLine();
+            }
+            Console.WriteLine("老師:請學生放學囉");
+            Console.ReadKey();
+
+            //do-while 先執行do的語法，再判斷do-while循環條件，成立->執行do的語法；不成立->退出do-while循環
+
+            Console.WriteLine("DO-WHILE 老師:請再將歌曲唱一遍");
+            string p45_goodYN = "n";
+            do
+            {
+                Console.WriteLine("學生唱歌中...");
+                Console.ReadKey();
+                Console.WriteLine("學生:老師請問滿意嗎?");
+                p45_goodYN = Console.ReadLine();
+
+            } while (p45_goodYN !="y");
+
+            Console.WriteLine("老師:請學生放學囉");
+            Console.ReadKey();
 
         }
     }
