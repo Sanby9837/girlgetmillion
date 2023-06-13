@@ -610,6 +610,18 @@ namespace ConsoleApp1_P31
 
 
             //提供輸入y或n，如果不是y或n就一直重新輸入
+            //條件:判斷輸入的值是y或n
+            //循環:輸入y or n 判斷
+            
+            string p44_checkYN = "";
+
+            while (p44_checkYN !="y" && p44_checkYN != "n")
+            {
+                Console.WriteLine("請輸入y或n");
+                p44_checkYN = Console.ReadLine();
+            }
+            Console.WriteLine($"輸入正確啦{p44_checkYN}");
+            Console.ReadKey();
         }
     }
 }
