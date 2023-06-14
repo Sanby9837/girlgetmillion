@@ -64,6 +64,12 @@ namespace ConsoleApp1_P31
                 case "48":
                     P48();
                     break;
+                case "49":
+                    P49();
+                    break;
+                case "50":
+                    P50();
+                    break;
 
                 default:
                     break;
@@ -788,6 +794,46 @@ namespace ConsoleApp1_P31
             //1. F11 逐語句偵錯
             //2. F10 逐過程偵錯
             //3. 斷點偵錯
+        }
+
+        /// <summary>
+        /// P49 For 循環
+        /// </summary>
+        static void P49()
+        {
+            //顯示10次，恭喜你開始學習c#
+
+            //int p49_CountsTen = 0;
+            //while ( p49_CountsTen < 10 )
+            //{
+            //    Console.WriteLine("恭喜你開始學習c#");
+            //    p49_CountsTen++;
+            //}
+            //Console.ReadKey();
+
+            for (int p49_CountsTen = 0; p49_CountsTen < 10; p49_CountsTen++)
+            {
+                Console.WriteLine("恭喜你開始學習c#");
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P50 for 循環的正序輸出與倒序輸出
+        /// </summary>
+        static void P50()
+        {
+            //求1~100之間的整數和、偶數和、奇數和
+            int p50_Sum = 0;
+            for (int p50_SumCounts = 1; p50_SumCounts < 100; p50_SumCounts+=2)
+            {
+                p50_Sum += p50_SumCounts;
+            }
+            Console.WriteLine($"奇數和{p50_Sum}");
+            Console.ReadKey();
+
+            //找100~999 之間的水仙花數
+            //
         }
     }
 }
