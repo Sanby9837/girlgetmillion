@@ -450,7 +450,7 @@ namespace ConsoleApp1_P31
                     Console.WriteLine("輸入月份錯誤，退出中");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 Console.WriteLine("-------------------------------");
@@ -621,7 +621,7 @@ namespace ConsoleApp1_P31
 
             string p44_checkYN = "";
 
-            while (p44_checkYN !="y" && p44_checkYN != "n")
+            while (p44_checkYN != "y" && p44_checkYN != "n")
             {
                 Console.WriteLine("請輸入y或n");
                 p44_checkYN = Console.ReadLine();
@@ -667,7 +667,7 @@ namespace ConsoleApp1_P31
                 Console.WriteLine("學生:老師請問滿意嗎?");
                 p45_goodYN = Console.ReadLine();
 
-            } while (p45_goodYN !="y");
+            } while (p45_goodYN != "y");
 
             Console.WriteLine("老師:請學生放學囉");
             Console.ReadKey();
@@ -685,11 +685,93 @@ namespace ConsoleApp1_P31
             //循環邏輯:輸入字串，判斷字串不是q，則顯示字串數字*2，判斷字串是q，把A改q
             //最後顯示:輸入值
 
+            string p47_Inputq = "";
+            do
+            {
+                Console.WriteLine("請輸入數字或輸入q結束");
+                p47_Inputq = Console.ReadLine();
+
+                if (p47_Inputq != "q")
+                {
+                    try
+                    {
+                        int p47_InputNumber = Convert.ToInt32(p47_Inputq);
+                        Console.WriteLine($"{p47_Inputq}的兩倍是{p47_InputNumber * 2}");
+                    }
+                    catch
+                    {
+                        Console.WriteLine("輸入錯誤");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("輸入正確，退出");
+                }
+            }
+            while (p47_Inputq != "q");
+            Console.ReadKey();
+
+            //------------------------------老師寫的
+            //while (p47_Inputq != "q")
+            //{
+
+            //    Console.WriteLine("請輸入數字或輸入q結束");
+            //    p47_Inputq = Console.ReadLine();
+            //    if (p47_Inputq != "q")
+            //    {
+            //        try
+            //        {
+            //            int p47_InputNumber = Convert.ToInt32(p47_Inputq);
+            //            Console.WriteLine($"{p47_Inputq}的兩倍是{p47_InputNumber * 2}");
+            //        }
+            //        catch
+            //        {
+            //            Console.WriteLine("輸入錯誤，請重新輸入");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("輸入正確，退出");
+            //    }
+            //}
+            //Console.ReadKey();
+
             //不斷要求輸入數字(假定輸入的值都不會有錯誤)，
             //如果輸入end顯示剛剛輸入的數字中最大值，然後結束程序
             //條件:輸入值不等於end
             //循環邏輯:輸入字串，判斷字串不是end，字串轉數值如果>較大數值，將字串更新為最大數值
             //最後顯示:最大數值、輸入值
+
+            string p47_Input = "";
+            int p47_max = 0;
+
+            while (p47_Input !="end")
+            {
+                Console.WriteLine("請輸入數字或end結束");
+                p47_Input = Console.ReadLine();
+
+                if (p47_Input != "end" )
+                {
+                    try
+                    {
+                        int p47_Int= Convert.ToInt32(p47_Input);
+                        if (p47_Int > p47_max)
+                        {
+                            p47_max = p47_Int;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("輸入錯誤");
+                    }
+                }
+                else //=end
+                {
+                    Console.WriteLine($"最大值是{p47_max}");
+                }
+            }
+            Console.ReadKey();
+
         }
     }
 }
