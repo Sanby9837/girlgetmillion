@@ -61,6 +61,9 @@ namespace ConsoleApp1_P31
                 case "47":
                     P47();
                     break;
+                case "48":
+                    P48();
+                    break;
 
                 default:
                     break;
@@ -772,6 +775,19 @@ namespace ConsoleApp1_P31
             }
             Console.ReadKey();
 
+        }
+
+        /// <summary>
+        /// P48 程序偵錯
+        /// </summary>
+        static void P48()
+        {
+            //1.寫完一段程序，想確認程序執行過程
+            //2.當完成程序，發現未依照想像的方式運行
+            //偵錯方式
+            //1. F11 逐語句偵錯
+            //2. F10 逐過程偵錯
+            //3. 斷點偵錯
         }
     }
 }
