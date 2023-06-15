@@ -76,6 +76,15 @@ namespace ConsoleApp1_P31
                 case "52":
                     P52();
                     break;
+                case "53":
+                    P53();
+                    break;
+                case "54":
+                    P53();
+                    break;
+                case "55":
+                    P55();
+                    break;
 
                 default:
                     break;
@@ -840,7 +849,7 @@ namespace ConsoleApp1_P31
         }
 
         /// <summary>
-        /// P51 水仙花數練習題
+        /// P51 for迴圈-水仙花數練習題
         /// </summary>
         static void P51()
         {
@@ -879,10 +888,70 @@ namespace ConsoleApp1_P31
         }
 
         /// <summary>
-        /// P52 乘法口訣表
+        /// P52 for迴圈-99乘法表
         /// </summary>
         static void P52()
         {
+            //宣告的變數:A、B
+            //條件:A循環(A從1~9遞增) B循環(B從1~9遞增，但要做A的九遍)
+            //循環語法:B循環(列印出A*B=多少)
+
+            for (int p52_99_A = 1; p52_99_A < 10; p52_99_A++)
+            {
+                for (int p52_99_B = 1; p52_99_B < 10; p52_99_B++)
+                {
+                    Console.Write($"{p52_99_A}X{p52_99_B}={p52_99_A * p52_99_B}\t");
+                }
+                Console.WriteLine(" ");
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P53、54 for 迴圈 嵌套-99乘法表 的變異方式
+        /// </summary>
+        static void P53()
+        {
+            for (int p52_99_A = 1; p52_99_A < 10; p52_99_A++)
+            {
+                for (int p52_99_B = 1; p52_99_B <= p52_99_A; p52_99_B++)
+                {
+                    Console.Write($"{p52_99_A}X{p52_99_B}={p52_99_A * p52_99_B}\t");
+                }
+                Console.WriteLine(" ");
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P55 for迴圈 嵌套、倒序-加法表
+        /// </summary>
+        static void P55()
+        {
+            //輸入數字，並列出加法表
+            //A循環:變數A=input -1，直到<=1
+            //B循環:變數B從1開始+1 ，直到>=input
+            //在B印出 A+B的加總
+
+            //P55 try catch怎麼放 才對?
+
+            Console.WriteLine("請輸入一個數字");
+            try
+            {
+                int p55_Input = Convert.ToInt32(Console.ReadLine());
+                int p55_Input_B = 0;
+                for (int p55_Input_A = p55_Input ; p55_Input_A >= 0; p55_Input_A--)
+                {
+                    Console.WriteLine($"{p55_Input_A}+{p55_Input_B}={p55_Input_A + p55_Input_B}");
+                    p55_Input_B += 1;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("輸入錯誤，請重新輸入數字");
+            }
+            Console.ReadKey();
+
 
         }
     }
