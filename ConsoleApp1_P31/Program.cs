@@ -70,6 +70,12 @@ namespace ConsoleApp1_P31
                 case "50":
                     P50();
                     break;
+                case "51":
+                    P51();
+                    break;
+                case "52":
+                    P52();
+                    break;
 
                 default:
                     break;
@@ -754,16 +760,16 @@ namespace ConsoleApp1_P31
             string p47_Input = "";
             int p47_max = 0;
 
-            while (p47_Input !="end")
+            while (p47_Input != "end")
             {
                 Console.WriteLine("請輸入數字或end結束");
                 p47_Input = Console.ReadLine();
 
-                if (p47_Input != "end" )
+                if (p47_Input != "end")
                 {
                     try
                     {
-                        int p47_Int= Convert.ToInt32(p47_Input);
+                        int p47_Int = Convert.ToInt32(p47_Input);
                         if (p47_Int > p47_max)
                         {
                             p47_max = p47_Int;
@@ -825,15 +831,59 @@ namespace ConsoleApp1_P31
         {
             //求1~100之間的整數和、偶數和、奇數和
             int p50_Sum = 0;
-            for (int p50_SumCounts = 1; p50_SumCounts < 100; p50_SumCounts+=2)
+            for (int p50_SumCounts = 1; p50_SumCounts < 100; p50_SumCounts += 2)
             {
                 p50_Sum += p50_SumCounts;
             }
             Console.WriteLine($"奇數和{p50_Sum}");
             Console.ReadKey();
+        }
 
+        /// <summary>
+        /// P51 水仙花數練習題
+        /// </summary>
+        static void P51()
+        {
             //找100~999 之間的水仙花數
-            //
+            //條件:計數>999停止
+            //循環語法: 計數%100 三次方 + 計數 %10 三次方 + 計數
+
+            //int p50_flower = 100;
+            //while (p50_flower <= 999)
+            //{
+            //    int p50_flower_sum_H = p50_flower / 100;
+            //    int p50_flower_sum_T = p50_flower / 10 % 10;
+            //    int p50_flower_sum_O = p50_flower % 10;
+            //    double p50_flower_sum = Math.Pow(p50_flower_sum_H, 3) + Math.Pow(p50_flower_sum_T, 3) + Math.Pow(p50_flower_sum_O, 3);
+            //    if (p50_flower == p50_flower_sum)
+            //    {
+            //        Console.WriteLine(p50_flower);
+            //    }
+            //    p50_flower++;
+            //}
+            //Console.ReadKey();
+
+            for (int p50_flower = 100; p50_flower <= 999; p50_flower++)
+            {
+                int p50_flower_sum_H = p50_flower / 100;
+                int p50_flower_sum_T = p50_flower / 10 % 10;
+                int p50_flower_sum_O = p50_flower % 10;
+                double p50_flower_sum = Math.Pow(p50_flower_sum_H, 3) + Math.Pow(p50_flower_sum_T, 3) + Math.Pow(p50_flower_sum_O, 3);
+
+                if (p50_flower == p50_flower_sum)
+                {
+                    Console.WriteLine(p50_flower);
+                }
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P52 乘法口訣表
+        /// </summary>
+        static void P52()
+        {
+
         }
     }
 }
