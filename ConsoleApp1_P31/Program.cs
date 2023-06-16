@@ -85,6 +85,15 @@ namespace ConsoleApp1_P31
                 case "55":
                     P55();
                     break;
+                case "56":
+                    P56();
+                    break;
+                case "57":
+                    P57();
+                    break;
+                case "58":
+                    P58();
+                    break;
 
                 default:
                     break;
@@ -940,7 +949,7 @@ namespace ConsoleApp1_P31
             {
                 int p55_Input = Convert.ToInt32(Console.ReadLine());
                 int p55_Input_B = 0;
-                for (int p55_Input_A = p55_Input ; p55_Input_A >= 0; p55_Input_A--)
+                for (int p55_Input_A = p55_Input; p55_Input_A >= 0; p55_Input_A--)
                 {
                     Console.WriteLine($"{p55_Input_A}+{p55_Input_B}={p55_Input_A + p55_Input_B}");
                     p55_Input_B += 1;
@@ -951,9 +960,114 @@ namespace ConsoleApp1_P31
                 Console.WriteLine("輸入錯誤，請重新輸入數字");
             }
             Console.ReadKey();
+        }
 
+        /// <summary>
+        /// P56 類型轉換和方法簡介
+        /// </summary>
+        static void P56()
+        {
+            //Convert.ToInt32 ->是去調用int.Parse
+            int p56_Number = int.Parse("123");
+            Console.WriteLine($"int.Parse的數值{p56_Number}");
+            Console.ReadKey();
+
+            //int.TryParse 嘗試將字串(參數1)轉為int類型
+            //如果成功將值賦予逗號後的變數(參數2)，並將true賦予前方bool
+            //如果失敗將變數變更為0，並將flase賦予前方的bool(返回值)
+            int p56_Number_trypass = 123;
+            bool p56_bool_trypass = int.TryParse("4a6", out p56_Number_trypass);
+            Console.WriteLine($"結果{p56_bool_trypass}數值{p56_Number_trypass}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P57 練習題*3
+        /// </summary>
+        static void P57()
+        {
+            //循環輸入5個人的年齡計算並計算平均年齡，
+            //如果輸入的數值大於100或出現負數，停止輸入並報錯誤
+            //條件:循環五次，數值大於100 出現負數  有循環次數(所以用for)
+            //循環語法:輸入數值，加總後計算平均值
+
+            int p57_sum = 0;
+            for (int p57_countfive = 1; p57_countfive < 6; p57_countfive++)
+            {
+                Console.WriteLine($"請輸入第{p57_countfive}個人的年齡");
+                try
+                {
+                    int p57_age = int.Parse(Console.ReadLine());
+
+                    if (p57_age > 99 || p57_age < 0)
+                    {
+                        Console.WriteLine("輸入錯誤，退出程序");
+                        break;
+                    }
+                    else
+                    {
+                        p57_sum = p57_sum + p57_age;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("輸入錯誤，退出程序 try");
+                    break;
+                }
+                Console.WriteLine($"現在共計{p57_countfive}位，總年齡{p57_sum}，平均年齡{p57_sum / p57_countfive}");
+            }
+            Console.ReadKey();
+
+            //在while中使用break
+            //要求使用者一直輸入帳號及密碼
+            //只要不是admin及8888，就提醒要求重新輸入
+            //正確就顯示登入成功
+
+            string p57_user = "a";
+            string p57_pass = "a";
+            while (true)
+            {
+                Console.WriteLine("請輸入帳號");
+                p57_user = Console.ReadLine();
+                Console.WriteLine("請輸入密碼");
+                p57_pass = Console.ReadLine();
+
+                if (p57_user == "admin" && p57_pass == "8888")
+                {
+                    Console.WriteLine($"登入成功{p57_user}、{p57_pass}");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine($"帳號{p57_user}、密碼{p57_pass}錯誤，請重新輸入");
+                }
+            }
+            Console.ReadKey();
+
+            //1~100之間的整數相加
+            //得到的sum大於20時，顯示現在的累加數
+
+            int p57_SumH = 0;
+            for (int p57_Counts100 = 0; p57_Counts100 < 101; p57_Counts100++)
+            {
+                p57_SumH = p57_SumH + p57_Counts100;
+                if (p57_SumH >= 20)
+                {
+                    Console.WriteLine($"加總{p57_SumH}、數值{p57_Counts100}");
+                    break;
+                }
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static void P58()
+        {
 
         }
+
     }
 }
 
