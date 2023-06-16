@@ -94,6 +94,12 @@ namespace ConsoleApp1_P31
                 case "58":
                     P58();
                     break;
+                case "59":
+                    P59();
+                    break;
+                case "60":
+                    P60();
+                    break;
 
                 default:
                     break;
@@ -1061,12 +1067,72 @@ namespace ConsoleApp1_P31
         }
 
         /// <summary>
-        /// 
+        /// P58 Continue
         /// </summary>
         static void P58()
         {
+            //while continue 計算1~100之間，除了能被7整除之外所有整數的和
+            int p58_sum = 0;
+            int p58_counts = 1;
+            //我寫的
+            //while (p58_counts <= 100)
+            //{
+            //    if (p58_counts%7 != 0)
+            //    {
+            //        p58_sum += p58_counts;
+            //    }
+            //    p58_counts++;
+            //}
+            //Console.WriteLine($"整數和為{p58_sum}");
+            //Console.ReadKey();
+
+            while (p58_counts <= 100)
+            {
+                if (p58_counts % 7 == 0)
+                {
+                    p58_counts++;
+                    continue;
+                }
+                p58_sum += p58_counts;
+                p58_counts++;
+            }
+            Console.WriteLine($"整數和為{p58_sum}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P59 for循環-求質數
+        /// </summary>
+        static void P59()
+        {
+            //找出100內，所有的質數(只能被1或本身數字整除，1不算)
+            for (int p59_findcount = 2; p59_findcount <= 100; p59_findcount++)
+            {
+                bool p59_check = true;
+                for (int p59_fish = 2; p59_fish < p59_findcount; p59_fish++)
+                {
+                    if (p59_findcount % p59_fish == 0)
+                    {
+                        p59_check = false;
+                        break;
+                    }
+                }
+                if (p59_check)
+                {
+                    Console.WriteLine($"{p59_findcount}");
+                }
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P60 三元表達式
+        /// </summary>
+        static void P60()
+        {
 
         }
+
 
     }
 }
