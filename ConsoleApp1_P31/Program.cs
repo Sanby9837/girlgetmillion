@@ -100,6 +100,9 @@ namespace ConsoleApp1_P31
                 case "60":
                     P60();
                     break;
+                case "61":
+                    P61();
+                    break;
 
                 default:
                     break;
@@ -1130,9 +1133,35 @@ namespace ConsoleApp1_P31
         /// </summary>
         static void P60()
         {
+            //輸入並計算兩數字大小後顯示
+            Console.WriteLine("請輸入第一個數字");
+            int p60_number_1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("請輸入第二個數字");
+            int p60_number_2 = int.Parse(Console.ReadLine());
+
+            //三元表達式 如果?前 公式正確 顯示第一的值
+            //如果錯誤 顯示:後的值
+            int p60_max = p60_number_1 > p60_number_2 ? p60_number_1 : p60_number_2;
+            Console.WriteLine($"最大值{p60_max}");
+            Console.ReadKey();
+
+            //輸入姓名，輸入的不是Sanby，就顯示大胖子
+            Console.WriteLine("請輸入姓名");
+            string p60_name = Console.ReadLine();
+
+            string p60_name_good = p60_name == "Sanby" ? "大天才" : "大胖子";
+            Console.WriteLine($"您是{p60_name_good}");
+            Console.ReadKey();
 
         }
 
+        /// <summary>
+        /// P61 三元表達式練習題
+        /// </summary>
+        static void P61()
+        {
+
+        }
 
     }
 }
