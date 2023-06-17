@@ -1156,11 +1156,64 @@ namespace ConsoleApp1_P31
         }
 
         /// <summary>
-        /// P61 三元表達式練習題
+        /// P61 產生隨機數
         /// </summary>
         static void P61()
         {
+            int k = 0;
+            //產生隨機數
+            //新增一個隨機數的對象
+            Random p61_random = new Random();
+            while (k < 10)
+            {
+                //讓上方產生隨機數的這個對象，調用方法來產生隨機數
+                int p61_rnext = p61_random.Next(1, 10);
 
+                Console.WriteLine($"while{p61_rnext}");
+                k++;
+            }
+            Console.ReadKey();
+
+
+            //新增一個隨機數的對象
+            Random p61_forrandom = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                //讓上方產生隨機數的這個對象，調用方法來產生隨機數
+                int p61_forrnext = p61_forrandom.Next(1, 10);
+                Console.WriteLine($"for {p61_forrnext}");
+            }
+            Console.ReadKey();
+
+
+            //輸入姓名，隨機顯示合適的職涯
+            Random p61_career = new Random();
+            int l = 0;
+            while (l < 10)
+            {
+                int p61_careernext = p61_career.Next(1, 5);
+
+                Console.WriteLine("請輸入您的姓名");
+                string name = Console.ReadLine();
+
+                switch (p61_careernext)
+                {
+                    case 1:
+                        Console.WriteLine($"{name}適合當會計師");
+                        break;
+                    case 2:
+                        Console.WriteLine($"{name}適合當工程師");
+                        break;
+                    case 3:
+                        Console.WriteLine($"{name}適合當老師");
+                        break;
+                    case 4:
+                        Console.WriteLine($"{name}適合當顧問師");
+                        break;
+                }
+                l++;
+            }
+            Console.ReadKey();
         }
 
     }
