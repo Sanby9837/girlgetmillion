@@ -87,7 +87,8 @@ namespace ConsoleApp1_P64
             //將列舉的值拿出來給p66_Open
             AppleStore p66_Open = AppleStore.OffLine;
             //強制將列舉轉為int給p66_OpenInt
-            int p66_OpenInt = (int)p66_Open;
+            // int p66_OpenInt = (int)p66_Open;
+            int p66_OpenInt = int.Parse(p66_Open);
             Console.WriteLine($"列舉轉int{p66_OpenInt}");
             Console.ReadKey();
 
@@ -104,7 +105,7 @@ namespace ConsoleApp1_P64
             Console.WriteLine($"列舉轉字串{p66_OpenString}");
             Console.ReadKey();
 
-            //將字串轉為列舉值
+            //將字串轉為列舉值；若不存在將當作異常
             string p66_string = "5";
             //調用Parse這個方法，將字串轉為對應的列舉類型
             //Enum.Parse的第一個參數，寫typeof判斷要轉哪一個enum的類型
