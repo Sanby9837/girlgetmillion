@@ -47,6 +47,9 @@ namespace ConsoleApp1_P64
                 case "66":
                     P66();
                     break;
+                case "67":
+                    P67();
+                    break;
 
                 default:
                     break;
@@ -110,7 +113,15 @@ namespace ConsoleApp1_P64
             AppleStore p66_Open_2 = (AppleStore)Enum.Parse(typeof(AppleStore), p66_string);
             Console.WriteLine($"子串轉為列舉值{p66_Open_2}");
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static void P67()
+        {
 
         }
+
     }
 }
