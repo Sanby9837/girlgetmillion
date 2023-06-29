@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,11 +24,30 @@ namespace ConsoleApp1_P64
         Online = 3,
         OffLine,
         Leave,
-        Busy,   
+        Busy,
         CallMe,
     }
 
-    
+    /// <summary>
+    /// P67結構 struct
+    /// </summary>
+    public struct Person
+    {
+        public string _p67_name; //字段，與變量不同的是可以儲存很多值，命名建議第一碼加下底線
+        public int _p67_age;
+        public Gender _p67_gender;
+    }
+
+    /// <summary>
+    /// P67 結構練習
+    /// </summary>
+    public struct MyColor
+    {
+        public int _p67_red;
+        public int _p67_green;
+        public int _p67_blue;
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -50,12 +70,17 @@ namespace ConsoleApp1_P64
                 case "67":
                     P67();
                     break;
+                case "68":
+                    P68();
+                    break;
+                case "69":
+                    P69();
+                    break;
 
                 default:
                     break;
             }
         }
-
 
         /// <summary>
         /// P64 常量-不可變的值
@@ -126,12 +151,79 @@ namespace ConsoleApp1_P64
         }
 
         /// <summary>
-        /// 
+        /// P67 結構
         /// </summary>
         static void P67()
         {
+            Person sanby;
+            sanby._p67_name = "Sanby";
+            sanby._p67_age = 28;
+            sanby._p67_gender = Gender.女;
+
+            Console.WriteLine($"名字{sanby._p67_name}年齡{sanby._p67_age}性別{sanby._p67_gender}");
+            Console.ReadKey();
+
+            //練習-1 (三原色調色器的概念)
+            //定義一個結構叫MyColor，有三個成員，分別是int類型的red,green,blue
+            //宣告一個 MyColor類型的變量，對其成員賦值，讓Mycolor是紅色
+
+            MyColor p67_color;
+            p67_color._p67_blue = 0;
+            p67_color._p67_green = 0;
+            p67_color._p67_red = 255;
+            Console.WriteLine($"三原色-> 紅 {p67_color._p67_red}、綠 {p67_color._p67_green}、藍{p67_color._p67_blue}");
+            Console.ReadKey();
+
+            //練習-2
+            //定義一個結構Person，有三個成員，為姓名、性別、年齡，性別為列舉類型
+            //宣告兩的變量，小三 18歲 女生、小四 20歲 男生
+
+            Person l3;
+            l3._p67_gender = Gender.女;
+            l3._p67_age = 18;
+            l3._p67_name = "小三";
+
+            Person l4;
+            l4._p67_gender = Gender.男;
+            l4._p67_age = 20;
+            l4._p67_name = "小四";
+
+            Console.WriteLine($"第一位姓名{l3._p67_name}、年齡{l3._p67_age}、性別{l3._p67_gender}");
+            Console.WriteLine($"第二位姓名{l4._p67_name}、年齡{l4._p67_age}、性別{l4._p67_gender}");
+            Console.ReadKey();
 
         }
 
+        /// <summary>
+        /// P68 數組
+        /// </summary>
+        static void P68()
+        {
+            //宣告數組
+            //數組的類型[] 數組名稱 = new 數組類型 [數組長度];
+            int[] p68_nums = new int[10];
+            int[] p68_nums2 = { 1, 2, 3, 4, 5, 6 };
+
+            //執行時會報異常，因為超出指定的長度
+            //p68_nums[10] = 11;
+
+            //賦值後，列印出來
+            //賦值方式，第一個值給0、第2個給1...依此類推
+            for (int i = 0; i < p68_nums.Length; i++)
+            {
+                p68_nums[i] = i;
+                Console.WriteLine(p68_nums[i]);
+            }
+
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P69 數組練習
+        /// </summary>
+        static void P69()
+        {
+
+        }
     }
 }
