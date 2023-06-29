@@ -52,7 +52,7 @@ namespace ConsoleApp1_P64
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("go to ???");
+            Console.WriteLine("Where u go ???");
             string go = Console.ReadLine();
 
 
@@ -195,12 +195,12 @@ namespace ConsoleApp1_P64
         }
 
         /// <summary>
-        /// P68 數組
+        /// P68 陣列
         /// </summary>
         static void P68()
         {
-            //宣告數組
-            //數組的類型[] 數組名稱 = new 數組類型 [數組長度];
+            //宣告陣列
+            //陣列的類型[] 陣列名稱 = new 陣列類型 [陣列長度];
             int[] p68_nums = new int[10];
             int[] p68_nums2 = { 1, 2, 3, 4, 5, 6 };
 
@@ -219,11 +219,33 @@ namespace ConsoleApp1_P64
         }
 
         /// <summary>
-        /// P69 數組練習
+        /// P69 陣列練習
         /// </summary>
         static void P69()
         {
+            //練習:從一個整數陣列，取出最大/小值、總和、平均
+            //宣告 int類型變數，並隨意的賦初值
 
+            int[] p69_numbers = { 1, 2, 3, 4, 5, 6,7,8,9,10 };
+            int p69_max = p69_numbers[0]; //或是可以指定int區間的最小值 int.MinValue
+            int p69_min = p69_numbers[0]; //或是可以指定int區間的最大值 int.MaxValue
+            int p69_sum = 0;
+            for (int i = 0; i < p69_numbers.Length; i++)
+            {
+                if (p69_numbers[i]>p69_max)
+                {
+                    p69_max = p69_numbers[i];
+                }
+                if (p69_numbers[i]<p69_min)
+                {
+                    p69_min = p69_numbers[i];
+                }
+
+                p69_sum += p69_numbers[i];
+            }
+
+            Console.WriteLine($"最大值{p69_max}、最小值{p69_min}、平均值{p69_sum / p69_numbers.Length}、總和{p69_sum}");
+            Console.ReadKey();
         }
     }
 }
