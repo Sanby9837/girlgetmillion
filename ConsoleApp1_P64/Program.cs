@@ -79,6 +79,9 @@ namespace ConsoleApp1_P64
                 case "70":
                     P70();
                     break;
+                case "71":
+                    P71();
+                    break;
 
                 default:
                     break;
@@ -319,5 +322,32 @@ namespace ConsoleApp1_P64
             }
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// P71泡沫排序
+        /// </summary>
+        static void P71()
+        {
+            int[] p71_ints = { 12,11,10,9,8,7,6,5 };
+            //for (int i = 0; i < p71_ints.Length-1; i++)
+            //{
+            //    for (int j =0; j < p71_ints.Length-1-i; j++)
+            //    {
+            //        if (p71_ints[j] > p71_ints[j+1]) //前面的值大於後面的值 #升冪
+            //        {
+            //            int temp = p71_ints[j];
+            //            p71_ints[j] = p71_ints[j + 1];
+            //            p71_ints[j + 1] = temp;
+            //        }
+            //    }
+            //}
+            Array.Sort(p71_ints);  //Sort升冪 Reverse倒牌
+            for (int i = 0; i < p71_ints.Length; i++)
+            {
+                Console.Write($"{p71_ints[i]} ");
+            }
+            Console.ReadKey();
+        }
+
     }
 }
