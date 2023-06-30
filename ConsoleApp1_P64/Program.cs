@@ -76,6 +76,9 @@ namespace ConsoleApp1_P64
                 case "69":
                     P69();
                     break;
+                case "70":
+                    P70();
+                    break;
 
                 default:
                     break;
@@ -226,17 +229,17 @@ namespace ConsoleApp1_P64
             //練習:從一個整數陣列，取出最大/小值、總和、平均
             //宣告 int類型變數，並隨意的賦初值
 
-            int[] p69_numbers = { 1, 2, 3, 4, 5, 6,7,8,9,10 };
+            int[] p69_numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int p69_max = p69_numbers[0]; //或是可以指定int區間的最小值 int.MinValue
             int p69_min = p69_numbers[0]; //或是可以指定int區間的最大值 int.MaxValue
             int p69_sum = 0;
             for (int i = 0; i < p69_numbers.Length; i++)
             {
-                if (p69_numbers[i]>p69_max)
+                if (p69_numbers[i] > p69_max)
                 {
                     p69_max = p69_numbers[i];
                 }
-                if (p69_numbers[i]<p69_min)
+                if (p69_numbers[i] < p69_min)
                 {
                     p69_min = p69_numbers[i];
                 }
@@ -245,6 +248,75 @@ namespace ConsoleApp1_P64
             }
 
             Console.WriteLine($"最大值{p69_max}、最小值{p69_min}、平均值{p69_sum / p69_numbers.Length}、總和{p69_sum}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P70 陣列練習
+        /// </summary>
+        static void P70()
+        {
+            //陣列都是存入人名，分割成小明、阿花、老王
+            //印出結果為 ->小明|阿花|老王
+            string[] p70_names = { "小明", "阿花", "老王" };
+
+            for (int i = 0; i < p70_names.Length; i++)
+            {
+                Console.Write($"{p70_names[i]}");
+                if (p70_names.Length != i + 1)
+                {
+                    Console.Write("|");
+                }
+            }
+            Console.WriteLine("");
+            Console.ReadKey();
+
+            //老師的寫法
+            string p70_str = null;
+            for (int i = 0; i < p70_names.Length - 1; i++)
+            {
+                p70_str += p70_names[i] + "|";
+            }
+            Console.WriteLine($"{p70_str}{p70_names[p70_names.Length - 1]}");
+            Console.ReadKey();
+
+            //將一個整數數字的陣列
+            //如果是正數，將數值+1
+            //如果是負數，將數值-1
+            //如果是0，不變
+            int[] p70_ints = { 10, 20, 30, 0, -40, -50, -60 };
+            string p70_ints_string = null;
+
+            for (int i = 0; i < p70_ints.Length; i++)
+            {
+                if (p70_ints[i] > 0)
+                {
+                    p70_ints[i] += 1;
+                }
+                else if (p70_ints[i] < 0)
+                {
+                    p70_ints[i] -= 1;
+                }
+
+                p70_ints_string += p70_ints[i] + " ";
+            }
+            Console.WriteLine($"{p70_ints_string}");
+            Console.ReadKey();
+
+            //將字串陣列的元素進行順序反轉
+            string[] p70_strings = { "我", "是", "好人" };
+
+            for (int i = 0; i < p70_strings.Length / 2; i++)
+            {
+                string temp = p70_strings[i];
+                p70_strings[i] = p70_strings[p70_strings.LongLength - 1 - i];
+                p70_strings[p70_strings.LongLength - 1 - i] = temp;
+            }
+
+            for (int i = 0; i < p70_strings.Length; i++)
+            {
+                Console.WriteLine($"{p70_strings[i]}");
+            }
             Console.ReadKey();
         }
     }
