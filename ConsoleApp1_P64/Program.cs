@@ -82,6 +82,9 @@ namespace ConsoleApp1_P64
                 case "71":
                     P71();
                     break;
+                case "72":
+                    P72();
+                    break;
 
                 default:
                     break;
@@ -325,7 +328,7 @@ namespace ConsoleApp1_P64
 
         /// <summary>
         /// P71泡沫排序
-        /// </summary>
+        /// </summary> 
         static void P71()
         {
             int[] p71_ints = { 12,11,10,9,8,7,6,5 };
@@ -349,5 +352,20 @@ namespace ConsoleApp1_P64
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// P72 方法
+        /// </summary>
+        static void P72()
+        {
+
+        }
+
+        /// <summary>
+        /// P72 練習的方法
+        /// </summary>
+        public static int GetMax(int n1,int n2)
+        {
+            return n1 > n2 ? n1 : n2;
+        }
     }
 }
