@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp1_P64
 {
     /// <summary>
-    /// P65 列舉宣告
+    /// P65 列舉宣告 enum
     /// </summary>
     public enum Gender
     {
@@ -18,7 +18,7 @@ namespace ConsoleApp1_P64
     }
 
     /// <summary>
-    /// P66 列舉宣告
+    /// P66 列舉宣告 enum
     /// </summary>
     public enum QQState
     {
@@ -85,6 +85,9 @@ namespace ConsoleApp1_P64
                     break;
                 case "72":
                     P72();
+                    break;
+                case "76":
+                    P76();
                     break;
 
                 default:
@@ -335,7 +338,7 @@ namespace ConsoleApp1_P64
             int[] p71_ints = { 12, 11, 10, 9, 8, 7, 6, 5 };
             //for (int i = 0; i < p71_ints.Length-1; i++)
             //{
-            //    for (int j =0; j < p71_ints.Length-1-i; j++)
+            //    for (int j =0; j < p71_ints.Length-1; j++)
             //    {
             //        if (p71_ints[j] > p71_ints[j+1]) //前面的值大於後面的值 #升冪
             //        {
@@ -397,5 +400,31 @@ namespace ConsoleApp1_P64
         {
             return n1 > n2 ? n1 : n2;
         }
+
+        /// <summary>
+        /// P76 方法調用問題
+        /// </summary>
+        static void P76()
+        {
+            //示範拿取全局變量進行編譯
+            int plus_B=Plus(_number);
+            Console.WriteLine($"結果是{plus_B}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 靜態字段當作全局變量
+        /// </summary>
+        public static int _number = 10;
+
+        /// <summary>
+        /// P76 _number+5
+        /// </summary>
+        public static int Plus(int _number)
+        {
+            _number += 5;
+            return _number;
+        }
+
     }
 }
