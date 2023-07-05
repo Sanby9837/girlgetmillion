@@ -950,24 +950,28 @@ namespace ConsoleApp1_P31
             //A循環:變數A=input -1，直到<=1
             //B循環:變數B從1開始+1 ，直到>=input
             //在B印出 A+B的加總
-
-            //P55 try catch怎麼放 才對?
-
-            Console.WriteLine("請輸入一個數字");
-            try
+            bool retry = true;
+            while (retry)
             {
-                int p55_Input = Convert.ToInt32(Console.ReadLine());
-                int p55_Input_B = 0;
-                for (int p55_Input_A = p55_Input; p55_Input_A >= 0; p55_Input_A--)
+                try
                 {
-                    Console.WriteLine($"{p55_Input_A}+{p55_Input_B}={p55_Input_A + p55_Input_B}");
-                    p55_Input_B += 1;
+                    Console.WriteLine("請輸入一個數字");
+                    int p55_Input = Convert.ToInt32(Console.ReadLine());
+                    int p55_Input_B = 0;
+                    for (int p55_Input_A = p55_Input; p55_Input_A >= 0; p55_Input_A--)
+                    {
+                        Console.WriteLine($"{p55_Input_A}+{p55_Input_B}={p55_Input_A + p55_Input_B}");
+                        p55_Input_B += 1;
+                    }
+                    retry = false;
+                }
+                catch
+                {
+                    Console.WriteLine("輸入錯誤，請重新輸入數字");
                 }
             }
-            catch
-            {
-                Console.WriteLine("輸入錯誤，請重新輸入數字");
-            }
+
+
             Console.ReadKey();
         }
 

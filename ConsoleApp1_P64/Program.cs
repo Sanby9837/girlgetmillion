@@ -354,7 +354,8 @@ namespace ConsoleApp1_P64
         }
 
         /// <summary>
-        /// P72 方法
+        /// P72 方法的使用方式
+        /// 類別名稱.方法名稱
         /// </summary>
         static void P72()
         {
@@ -381,7 +382,6 @@ namespace ConsoleApp1_P64
                     Console.WriteLine("輸入錯誤，請重新輸入");
                 }
             }
-            
             int p72_max = Program.GetMax(p71_1, p72_2);
             Console.WriteLine($"最大數是{p72_max}");
             Console.ReadKey();
