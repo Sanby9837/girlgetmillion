@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
@@ -331,7 +332,7 @@ namespace ConsoleApp1_P64
         /// </summary> 
         static void P71()
         {
-            int[] p71_ints = { 12,11,10,9,8,7,6,5 };
+            int[] p71_ints = { 12, 11, 10, 9, 8, 7, 6, 5 };
             //for (int i = 0; i < p71_ints.Length-1; i++)
             //{
             //    for (int j =0; j < p71_ints.Length-1-i; j++)
@@ -357,13 +358,42 @@ namespace ConsoleApp1_P64
         /// </summary>
         static void P72()
         {
+            int p71_1 = 0;
+            int p72_2 = 0;
+            bool retry = true;
 
+            while (retry)
+            {
+                try
+                {
+                    Console.WriteLine("請輸入第一個整數");
+                    p71_1 = Convert.ToInt32(Console.ReadLine());
+                    //catch
+                    //{
+                    //    Console.WriteLine("輸入錯誤，請重新輸入");
+                    //}
+                    Console.WriteLine("請輸入第二個整數");
+                    p72_2 = Convert.ToInt32(Console.ReadLine());
+                    retry = false;
+                }
+                catch
+                {
+                    Console.WriteLine("輸入錯誤，請重新輸入");
+                }
+            }
+            
+            int p72_max = Program.GetMax(p71_1, p72_2);
+            Console.WriteLine($"最大數是{p72_max}");
+            Console.ReadKey();
         }
 
         /// <summary>
-        /// P72 練習的方法
+        /// P72 練習方法:計算兩整數最大值，並返回
         /// </summary>
-        public static int GetMax(int n1,int n2)
+        /// <param name="n1">第一個整數</param>
+        /// <param name="n2">第二個整數</param>
+        /// <returns>最大整數</returns>
+        public static int GetMax(int n1, int n2)
         {
             return n1 > n2 ? n1 : n2;
         }
