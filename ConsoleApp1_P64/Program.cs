@@ -96,6 +96,9 @@ namespace ConsoleApp1_P64
                 case "78":
                     P78();
                     break;
+                case "79":
+                    P79();
+                    break;
 
                 default:
                     break;
@@ -471,8 +474,7 @@ namespace ConsoleApp1_P64
         }
 
         /// <summary>
-        /// P78 方法的練習題
-        /// 只允許輸入y或n，做成方法處理
+        /// P78 方法的練習題 *2
         /// </summary>
         static void P78()
         {
@@ -482,7 +484,7 @@ namespace ConsoleApp1_P64
             Console.WriteLine($"您輸入的是{reslut}");
             Console.ReadKey();
 
-            int[] p78_array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            int[] p78_array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int p78_sum = Sum_Array(p78_array);
             Console.WriteLine($"陣列加總值{p78_sum}");
             Console.ReadKey();
@@ -508,14 +510,59 @@ namespace ConsoleApp1_P64
         /// </summary>
         /// <param name="a1">需加總的陣列</param>
         /// <returns>傳回陣列的加總</returns>
-        public static int Sum_Array(int[] a1 )
+        public static int Sum_Array(int[] a1)
         {
             int p78_sum = 0;
             for (int i = 0; i < a1.Length; i++)
             {
                 p78_sum += a1[i];
             }
-            return p78_sum; 
+            return p78_sum;
+        }
+
+        /// <summary>
+        /// P79 方法與陣列練習
+        /// </summary>
+        static void P79()
+        {
+            int[] p79_4array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int p79Max = Array_MaxMinSumAvg(p79_4array)[0];
+            int p79Min = Array_MaxMinSumAvg(p79_4array)[1];
+            int p79Sum = Array_MaxMinSumAvg(p79_4array)[2];
+            int p79Avg = Array_MaxMinSumAvg(p79_4array)[3];
+            Console.WriteLine($"最大值{p79Max}、最小值{p79Min}、加總{p79Sum}、平均值{p79Avg}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 求陣列 最大、最小、總和、平均值
+        /// </summary>
+        /// <param name="n1">需求陣列</param>
+        /// <returns>依序傳回最大、最小、總和、平均值</returns>
+        public static int[] Array_MaxMinSumAvg(int[] n1)
+        {
+            int[] result = new int[4];
+            result[0] = n1[0]; //max
+            result[1] = n1[0]; //min
+            result[2] = 0;
+
+            for (int i = 0; i < n1.Length; i++)
+            {   
+                //如果現在循環的數值，比預設的值還大，將max更新
+                if (n1[i] > result[0])
+                {
+                    result[0] = n1[i];
+                }
+                //如果現在循環的數值，比預設的值還小，將min更新
+                if (n1[i] < result[1])
+                {
+                    result[1] = n1[i];
+                }
+
+                result[2] += n1[i];
+            }
+            result[3] = result[2] / n1.Length;
+            return result;
         }
     }
 }
