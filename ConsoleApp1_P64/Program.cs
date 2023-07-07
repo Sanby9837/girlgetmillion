@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Http.Headers;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
@@ -88,6 +89,12 @@ namespace ConsoleApp1_P64
                     break;
                 case "76":
                     P76();
+                    break;
+                case "77":
+                    P77();
+                    break;
+                case "78":
+                    P78();
                     break;
 
                 default:
@@ -385,7 +392,7 @@ namespace ConsoleApp1_P64
                     Console.WriteLine("輸入錯誤，請重新輸入");
                 }
             }
-            int p72_max = Program.GetMax(p71_1, p72_2);
+            int p72_max = Program.GetMax(p71_1, p72_2);   //p71_1、p72_2實際參數
             Console.WriteLine($"最大數是{p72_max}");
             Console.ReadKey();
         }
@@ -396,7 +403,7 @@ namespace ConsoleApp1_P64
         /// <param name="n1">第一個整數</param>
         /// <param name="n2">第二個整數</param>
         /// <returns>最大整數</returns>
-        public static int GetMax(int n1, int n2)
+        public static int GetMax(int n1, int n2) //n1、n2形式參數
         {
             return n1 > n2 ? n1 : n2;
         }
@@ -407,7 +414,7 @@ namespace ConsoleApp1_P64
         static void P76()
         {
             //示範拿取全局變量進行編譯
-            int plus_B=Plus(_number);
+            int plus_B = Plus(_number);
             Console.WriteLine($"結果是{plus_B}");
             Console.ReadKey();
         }
@@ -426,5 +433,89 @@ namespace ConsoleApp1_P64
             return _number;
         }
 
+        /// <summary>
+        /// 方法的練習
+        /// 讀取輸入的整數，定義成方法，多次調用
+        /// </summary>
+        static void P77()
+        {
+            Console.WriteLine("請輸入一個整數");
+            string p77_Input = Console.ReadLine();
+            int result = IntputString(p77_Input);
+            Console.WriteLine($"輸入正確{result}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        ///  判斷輸入的文字是否為數字
+        ///  如果輸入的是數字，則返回，否則提示用戶重新輸入
+        /// </summary>
+        /// <param name="n1"></param>
+        /// <returns></returns>
+        public static int IntputString(string n1)
+        {
+            while (true)
+            {
+                try
+                {
+                    int n2 = Convert.ToInt32(n1);
+                    return n2;
+                }
+                catch
+                {
+                    Console.WriteLine("輸入的文字不是數字，請重新輸入");
+                    n1 = Console.ReadLine();
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// P78 方法的練習題
+        /// 只允許輸入y或n，做成方法處理
+        /// </summary>
+        static void P78()
+        {
+            Console.WriteLine("請輸入Y或N");
+            string s_yn = Console.ReadLine();
+            string reslut = Check_YN(s_yn);
+            Console.WriteLine($"您輸入的是{reslut}");
+            Console.ReadKey();
+
+            int[] p78_array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            int p78_sum = Sum_Array(p78_array);
+            Console.WriteLine($"陣列加總值{p78_sum}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 判斷輸入的值是否為Y或N，是就返回；不是則不斷輸入
+        /// </summary>
+        /// <param name="s_yn"></param>
+        /// <returns></returns>
+        public static string Check_YN(string s_yn)
+        {
+            while (s_yn != "Y" && s_yn != "N")
+            {
+                Console.WriteLine($"您輸入的{s_yn}不是Y或N，請重新輸入");
+                s_yn = Console.ReadLine();
+            }
+            return s_yn;
+        }
+
+        /// <summary>
+        /// 計算輸入數組的和
+        /// </summary>
+        /// <param name="a1">需加總的陣列</param>
+        /// <returns>傳回陣列的加總</returns>
+        public static int Sum_Array(int[] a1 )
+        {
+            int p78_sum = 0;
+            for (int i = 0; i < a1.Length; i++)
+            {
+                p78_sum += a1[i];
+            }
+            return p78_sum; 
+        }
     }
 }
