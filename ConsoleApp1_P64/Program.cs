@@ -105,6 +105,9 @@ namespace ConsoleApp1_P64
                 case "82":
                     P82();
                     break;
+                case "83":
+                    P83();
+                    break;
 
                 default:
                     break;
@@ -697,11 +700,17 @@ namespace ConsoleApp1_P64
         /// </summary>
         static void P82()
         {
-            //params參數
+            //params參數：將 實際參數中 跟 可變數量參數 類型相同的資料，當作陣列傳入
+            //限制是，一個方法只能有一個 params 參數，而且它必須是方法的最後一個參數。
             Score_Sum("小可愛", 100, 80, 100);
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// 顯示個人成績加總(params)
+        /// </summary>
+        /// <param name="name">性名</param>
+        /// <param name="score">成績</param>
         public static void Score_Sum(string name,params int[] score)
         {
             int sum = 0;
@@ -709,7 +718,53 @@ namespace ConsoleApp1_P64
             {
                 sum += score[i];
             }
-            Console.WriteLine($"{name}您的總成績為{sum}");
+            Console.WriteLine($"{name}，您的總成績為{sum}");
+        }
+
+        /// <summary>
+        /// P83 方法重載(overload)
+        /// 名稱相同，參數類型不同
+        /// </summary>
+        static void P83()
+        {
+            string result;
+            OverLoad_Plus("10", "20","30", out result);
+            Console.WriteLine($"結果是{result}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 方法重載-1 整數加總
+        /// </summary>
+        /// <param name="n1">數字1</param>
+        /// <param name="n2">數字2</param>
+        /// <param name="result">加總</param>
+        public static void OverLoad_Plus(int n1,int n2,out int result)
+        {
+            result = n1 + n2;
+        }
+
+        /// <summary>
+        /// 方法重載-2 字串總和
+        /// </summary>
+        /// <param name="s1">字串1</param>
+        /// <param name="s2">字串2</param>
+        /// <param name="result">字串總和</param>
+        public static void OverLoad_Plus(string s1,string s2,out string result)
+        {
+            result = s1 + s2;
+        }
+
+        /// <summary>
+        /// 方法重載-3 三個字串總和
+        /// </summary>
+        /// <param name="s1">字串1</param>
+        /// <param name="s2">字串2</param>
+        /// <param name="s3">字串3</param>
+        /// <param name="result">字串總和</param>
+        public static void OverLoad_Plus(string s1,string s2,string s3,out string result)
+        {
+            result = s1 + s2 + s3;
         }
     }
 }
