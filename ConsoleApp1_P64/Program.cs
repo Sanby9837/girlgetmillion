@@ -525,12 +525,33 @@ namespace ConsoleApp1_P64
         /// </summary>
         static void P79()
         {
+            //判斷字串練習題*2
             int[] p79_4array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int p79Max = Array_MaxMinSumAvg(p79_4array)[0];
             int p79Min = Array_MaxMinSumAvg(p79_4array)[1];
             int p79Sum = Array_MaxMinSumAvg(p79_4array)[2];
             int p79Avg = Array_MaxMinSumAvg(p79_4array)[3];
-            Console.WriteLine($"最大值{p79Max}、最小值{p79Min}、加總{p79Sum}、平均值{p79Avg}");
+            Console.WriteLine($"RETURN 方法，最大值{p79Max}、最小值{p79Min}、加總{p79Sum}、平均值{p79Avg}");
+            Console.ReadKey();
+
+
+            int p79Max_2;
+            int p79Min_2;
+            int p79Sum_2;
+            int p79Avg_2;
+            Array_MaxMinSumAvg_2(p79_4array, out p79Max_2, out p79Min_2, out p79Sum_2, out p79Avg_2);
+            Console.WriteLine($"OUT 方法，最大值{p79Max_2}、最小值{p79Min_2}、加總{p79Sum_2}、平均值{p79Avg_2}");
+            Console.ReadKey();
+
+
+            //登入資訊判斷
+            Console.WriteLine("請輸入帳號");
+            string p79_Log_Name=Console.ReadLine();
+            Console.WriteLine("請輸入密碼");
+            string p79_Log_Pass = Console.ReadLine();
+
+            bool tf_2 = Log_Message(p79_Log_Name,p79_Log_Pass,out string mes_2);
+            Console.WriteLine($"結果【{tf_2}】，登入狀態【{mes_2}】");
             Console.ReadKey();
         }
 
@@ -547,7 +568,7 @@ namespace ConsoleApp1_P64
             result[2] = 0;
 
             for (int i = 0; i < n1.Length; i++)
-            {   
+            {
                 //如果現在循環的數值，比預設的值還大，將max更新
                 if (n1[i] > result[0])
                 {
@@ -563,6 +584,66 @@ namespace ConsoleApp1_P64
             }
             result[3] = result[2] / n1.Length;
             return result;
+        }
+
+        /// <summary>
+        /// 求陣列 最大、最小、總和、平均值 our方法
+        /// </summary>
+        /// <param name="n1">需求陣列</param>
+        /// <param name="max">陣列多返回的最大值</param>
+        /// <param name="min">陣列多返回的最小值</param>
+        /// <param name="sum">陣列多返回的總和</param>
+        /// <param name="avg">陣列多返回的平均值</param>
+        public static void Array_MaxMinSumAvg_2(int[] n1, out int max, out int min, out int sum, out int avg)
+        {
+            max = n1[0]; //max
+            min = n1[0]; //min
+            sum = 0;
+
+            for (int i = 0; i < n1.Length; i++)
+            {
+                //如果現在循環的數值，比預設的值還大，將max更新
+                if (n1[i] > max)
+                {
+                    max = n1[i];
+                }
+                //如果現在循環的數值，比預設的值還小，將min更新
+                if (n1[i] < min)
+                {
+                    min = n1[i];
+                }
+
+                sum += n1[i];
+            }
+            avg = sum / n1.Length;
+        }
+
+        /// <summary>
+        /// 確認登入資訊是否正確
+        /// </summary>
+        /// <param name="s1">登入的字串陣列</param>
+        /// <param name="tf">登入是否成功</param>
+        /// <param name="mes">登入的狀態</param>
+        public static bool Log_Message(string s1,string s2, out string mes)
+        {
+            string name = s1;
+            string pass = s2;
+
+            if (name == "admin" && pass == "8888")
+            {
+                mes = "登入成功";
+                return true;
+            }
+            else if (name == "admin" && pass != "8888")
+            {
+                mes = "密碼錯誤";
+            }
+            else
+            {
+                mes = "帳號錯誤";
+            }
+            return false;
+          
         }
     }
 }
