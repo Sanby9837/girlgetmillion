@@ -99,6 +99,12 @@ namespace ConsoleApp1_P64
                 case "79":
                     P79();
                     break;
+                case "81":
+                    P81();
+                    break;
+                case "82":
+                    P82();
+                    break;
 
                 default:
                     break;
@@ -534,7 +540,7 @@ namespace ConsoleApp1_P64
             Console.WriteLine($"RETURN 方法，最大值{p79Max}、最小值{p79Min}、加總{p79Sum}、平均值{p79Avg}");
             Console.ReadKey();
 
-
+            //out方法 一定要在方法中賦值，宣告時可以不用賦值
             int p79Max_2;
             int p79Min_2;
             int p79Sum_2;
@@ -546,11 +552,11 @@ namespace ConsoleApp1_P64
 
             //登入資訊判斷
             Console.WriteLine("請輸入帳號");
-            string p79_Log_Name=Console.ReadLine();
+            string p79_Log_Name = Console.ReadLine();
             Console.WriteLine("請輸入密碼");
             string p79_Log_Pass = Console.ReadLine();
 
-            bool tf_2 = Log_Message(p79_Log_Name,p79_Log_Pass,out string mes_2);
+            bool tf_2 = Log_Message(p79_Log_Name, p79_Log_Pass, out string mes_2);
             Console.WriteLine($"結果【{tf_2}】，登入狀態【{mes_2}】");
             Console.ReadKey();
         }
@@ -587,7 +593,7 @@ namespace ConsoleApp1_P64
         }
 
         /// <summary>
-        /// 求陣列 最大、最小、總和、平均值 our方法
+        /// 求陣列 最大、最小、總和、平均值 out方法
         /// </summary>
         /// <param name="n1">需求陣列</param>
         /// <param name="max">陣列多返回的最大值</param>
@@ -624,7 +630,7 @@ namespace ConsoleApp1_P64
         /// <param name="s1">登入的字串陣列</param>
         /// <param name="tf">登入是否成功</param>
         /// <param name="mes">登入的狀態</param>
-        public static bool Log_Message(string s1,string s2, out string mes)
+        public static bool Log_Message(string s1, string s2, out string mes)
         {
             string name = s1;
             string pass = s2;
@@ -643,7 +649,67 @@ namespace ConsoleApp1_P64
                 mes = "帳號錯誤";
             }
             return false;
-          
+
+        }
+
+        /// <summary>
+        /// P81 ref參數
+        /// </summary>
+        static void P81()
+        {
+            //ref：將"""已賦值"""的變量傳入方法中，使其變化後再傳出
+            double salary = 30000;
+            Bonus(ref salary);
+            Console.WriteLine(salary);
+            Console.ReadKey();
+
+            //練習：使用方法來交換兩個int類型變量
+            int n1 = 10;
+            int n2 = 50;
+            Change2_int(ref n1,ref n2);
+            Console.WriteLine($"{n1},{n2}");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 薪水加上獎金3000
+        /// </summary>
+        /// <param name="s">傳入薪水</param>
+        public static void Bonus(ref double s)
+        {
+            s += 3000;
+        }
+
+        /// <summary>
+        /// 使用ref交換兩int值
+        /// </summary>
+        /// <param name="n1">第一個數字</param>
+        /// <param name="n2">第二個數字</param>
+        public static void Change2_int(ref int n1,ref int n2)
+        {
+            n1 = n1 - n2;// 10 , 1  ->9(10-1) , 1 
+            n2 = n1 + n2;// 9 , 10(9+1)
+            n1 = n2 - n1;// 1(10-9) , 10
+        }
+
+        /// <summary>
+        /// P82 params參數
+        /// </summary>
+        static void P82()
+        {
+            //params參數
+            Score_Sum("小可愛", 100, 80, 100);
+            Console.ReadKey();
+        }
+
+        public static void Score_Sum(string name,params int[] score)
+        {
+            int sum = 0;
+            for (int i = 0; i < score.Length; i++)
+            {
+                sum += score[i];
+            }
+            Console.WriteLine($"{name}您的總成績為{sum}");
         }
     }
 }
