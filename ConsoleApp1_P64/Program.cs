@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Http.Headers;
@@ -110,6 +111,9 @@ namespace ConsoleApp1_P64
                     break;
                 case "84":
                     P84();
+                    break;
+                case "86":
+                    P86();
                     break;
 
                 default:
@@ -794,8 +798,89 @@ namespace ConsoleApp1_P64
             {
                 return;
             }
-            i ++;
+            i++;
             TellStory(i);
         }
+
+        /// <summary>
+        /// P86方法的練習
+        /// </summary>
+        static void P86()
+        {
+            //可輸入兩個數字，計算兩數字的和
+            //1. 判斷輸入的數值只可以是整數--條件不符合，就重新輸入
+            //2.要求第一個數字需要比第二個數字小--條件不符合，就重新輸入
+            //3.計算兩數總和
+
+            int p86_n1 = String_ToInt("1");
+            int p86_n2 = String_ToInt("2");
+            Verify_Number(ref p86_n1, ref p86_n2);
+            int sum = Sum_2int(p86_n1, p86_n2);
+            Console.WriteLine($"兩數字加總值{sum}");
+            Console.ReadKey();
+
+        }
+
+        /// <summary>
+        /// 要求輸入一個字串，判斷是否為整數，錯誤重新輸入
+        /// </summary>
+        /// <returns>數字</returns>
+        public static int String_ToInt(string s1)
+        {
+            bool check = true;
+            int n1 = 0;
+            while (check)
+            {
+                try
+                {
+                    Console.WriteLine($"請輸入第{s1}個數字");
+                    n1 = Convert.ToInt32(Console.ReadLine());
+                    check = false;
+                }
+                catch
+                {
+                    Console.WriteLine("輸入錯誤，請重新輸入");
+                }
+            }
+            return n1;
+        }
+
+        /// <summary>
+        /// 判斷第二位數是否大於第一，若否重新輸入
+        /// </summary>
+        /// <param name="n1">數字1</param>
+        /// <param name="n2">數字2</param>
+        /// <param name="n1_out">傳出數字1</param>
+        /// <param name="n2_out">傳出數字2</param>
+        public static void Verify_Number(ref int n1, ref int n2)
+        {
+            while (true)
+            {
+                if (n1 < n2)
+                {
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("第二位數字，不能小於第一位，請重新輸入");
+                    n1 = String_ToInt("1");
+                    n2 = String_ToInt("2");
+                }
+            }
+        }
+
+        /// <summary>
+        /// 兩整數加總
+        /// </summary>
+        /// <param name="n1">數字1</param>
+        /// <param name="n2">數字2</param>
+        /// <returns>加總</returns>
+        public static int Sum_2int(int n1, int n2)
+        {
+            int sum = n1 + n2;
+            return sum;
+        }
+
+
     }
 }
