@@ -108,6 +108,9 @@ namespace ConsoleApp1_P64
                 case "83":
                     P83();
                     break;
+                case "84":
+                    P84();
+                    break;
 
                 default:
                     break;
@@ -669,7 +672,7 @@ namespace ConsoleApp1_P64
             //練習：使用方法來交換兩個int類型變量
             int n1 = 10;
             int n2 = 50;
-            Change2_int(ref n1,ref n2);
+            Change2_int(ref n1, ref n2);
             Console.WriteLine($"{n1},{n2}");
             Console.ReadKey();
         }
@@ -688,7 +691,7 @@ namespace ConsoleApp1_P64
         /// </summary>
         /// <param name="n1">第一個數字</param>
         /// <param name="n2">第二個數字</param>
-        public static void Change2_int(ref int n1,ref int n2)
+        public static void Change2_int(ref int n1, ref int n2)
         {
             n1 = n1 - n2;// 10 , 1  ->9(10-1) , 1 
             n2 = n1 + n2;// 9 , 10(9+1)
@@ -711,7 +714,7 @@ namespace ConsoleApp1_P64
         /// </summary>
         /// <param name="name">性名</param>
         /// <param name="score">成績</param>
-        public static void Score_Sum(string name,params int[] score)
+        public static void Score_Sum(string name, params int[] score)
         {
             int sum = 0;
             for (int i = 0; i < score.Length; i++)
@@ -728,7 +731,7 @@ namespace ConsoleApp1_P64
         static void P83()
         {
             string result;
-            OverLoad_Plus("10", "20","30", out result);
+            OverLoad_Plus("10", "20", "30", out result);
             Console.WriteLine($"結果是{result}");
             Console.ReadKey();
         }
@@ -739,7 +742,7 @@ namespace ConsoleApp1_P64
         /// <param name="n1">數字1</param>
         /// <param name="n2">數字2</param>
         /// <param name="result">加總</param>
-        public static void OverLoad_Plus(int n1,int n2,out int result)
+        public static void OverLoad_Plus(int n1, int n2, out int result)
         {
             result = n1 + n2;
         }
@@ -750,7 +753,7 @@ namespace ConsoleApp1_P64
         /// <param name="s1">字串1</param>
         /// <param name="s2">字串2</param>
         /// <param name="result">字串總和</param>
-        public static void OverLoad_Plus(string s1,string s2,out string result)
+        public static void OverLoad_Plus(string s1, string s2, out string result)
         {
             result = s1 + s2;
         }
@@ -762,9 +765,37 @@ namespace ConsoleApp1_P64
         /// <param name="s2">字串2</param>
         /// <param name="s3">字串3</param>
         /// <param name="result">字串總和</param>
-        public static void OverLoad_Plus(string s1,string s2,string s3,out string result)
+        public static void OverLoad_Plus(string s1, string s2, string s3, out string result)
         {
             result = s1 + s2 + s3;
+        }
+
+        /// <summary>
+        /// P84 方法遞迴
+        /// 方法自行調用自行，重複運行
+        /// </summary>
+        static void P84()
+        {
+            TellStory(0);
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 遞迴方法-講故事
+        /// </summary>
+        /// <param name="i"></param>
+        public static void TellStory(int i)
+        {
+            Console.WriteLine("從前有座山");
+            Console.WriteLine("山裡有座廟");
+            Console.WriteLine("廟裡有個老和尚和小和尚");
+            Console.WriteLine("有一天，小和尚哭了，老和尚給小和尚講了一個小故事");
+            if (i >= 9)
+            {
+                return;
+            }
+            i ++;
+            TellStory(i);
         }
     }
 }
