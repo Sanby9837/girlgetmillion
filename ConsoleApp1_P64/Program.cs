@@ -115,6 +115,12 @@ namespace ConsoleApp1_P64
                 case "86":
                     P86();
                     break;
+                case "87":
+                    P87();
+                    break;
+                case "88":
+                    P88();
+                    break;
 
                 default:
                     break;
@@ -881,6 +887,115 @@ namespace ConsoleApp1_P64
             return sum;
         }
 
+        /// <summary>
+        /// 方法的練習-輸入整數，判斷是否為質數
+        /// </summary>
+        static void P87()
+        {
+            Console.WriteLine("請輸入數字，將判斷是否為質數");
+            string p87_intput = Console.ReadLine();
+            int p87_Intput_n1 = IntputString(p87_intput);
+            bool p87_yn = Is_PrimeNumber(p87_Intput_n1);
+            Console.WriteLine(p87_yn);
+            Console.ReadKey();
+        }
 
+        /// <summary>
+        /// 確認整數是否為質數
+        /// </summary>
+        /// <param name="n1">輸入的整數</param>
+        /// <returns>是或否</returns>
+        public static bool Is_PrimeNumber(int n1)
+        {
+            //先判斷數字是否小於2
+            if (n1 < 2)
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 2; i <= n1 - 1; i++)
+                {
+                    //如果可以整除就不是質數
+                    if (n1 % i == 0)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// P88 方法的練習-輸入後，判斷成績等級
+        /// </summary>
+        static void P88()
+        {
+            Console.WriteLine("請輸入您的成績，將顯示您成績的分等");
+            int p88_intput = IntputString(Console.ReadLine());
+
+            while (true)
+                if (p88_intput > 100)
+                {
+                    Console.WriteLine("您的成績不可大於100，請重新輸入");
+                    p88_intput = IntputString(Console.ReadLine());
+                }
+                else if (p88_intput < 0)
+                {
+                    Console.WriteLine("您的成績不可小於0，請重新輸入");
+                    p88_intput = IntputString(Console.ReadLine());
+                }
+                else
+                {
+                    string result = GetScoreLevel(p88_intput);
+                    Console.WriteLine(result);
+                    Console.ReadKey();
+                    break;
+                }
+
+            string[] p88StringTest = { "ABC", "Do Rei Mi", "阿尼哈ㄙㄟ唷" };
+            String_Array_Change(p88StringTest);
+            for (int i = 0; i < p88StringTest.Length; i++)
+            {
+                Console.Write($"{p88StringTest[i]}  ");
+            }
+            Console.WriteLine("");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// P88 判斷成績等級
+        /// </summary>
+        /// <param name="score">整數成績</param>
+        /// <returns>優或良或請加油</returns>
+        public static string GetScoreLevel(int score)
+        {
+            if (score >= 90)
+            {
+                return "優";
+            }
+            else if (score >= 80)
+            {
+                return "良";
+            }
+            else
+            {
+                return "下次請再加油";
+            }
+        }
+
+        /// <summary>
+        /// 文字陣列倒序
+        /// </summary>
+        /// <param name="sac">陣列名稱</param>
+        public static void String_Array_Change(string[] sac)
+        {
+            for (int i = 0; i < sac.Length / 2; i++)
+            {
+                string temp = sac[i];
+                sac[i] = sac[sac.Length - 1 - i];
+                sac[sac.Length - 1 - i] = temp;
+            }
+        }
     }
 }
