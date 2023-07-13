@@ -121,6 +121,9 @@ namespace ConsoleApp1_P64
                 case "88":
                     P88();
                     break;
+                case "89":
+                    P89();
+                    break;
 
                 default:
                     break;
@@ -996,6 +999,81 @@ namespace ConsoleApp1_P64
                 sac[i] = sac[sac.Length - 1 - i];
                 sac[sac.Length - 1 - i] = temp;
             }
+        }
+
+        /// <summary>
+        /// P89 方法練習題*2
+        /// </summary>
+        static void P89()
+        {
+            //1.請對整數陣列進行升序排序
+            Console.WriteLine("請輸入您共要有幾個數字");
+            int times = IntputString(Console.ReadLine());
+            int[] intArray = Write_Int_Array(times);
+            Sort_Int_Array(intArray);
+
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                Console.Write($"-{intArray[i]}");
+            }
+            Console.WriteLine(" ");
+            Console.ReadKey();
+
+            //2.將字串陣列輸出為"|" 分割形式
+            string[] string_Array = { "KKK", "BBB", "UUU" };
+            String_Array_AddLine(string_Array);
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 傳入整數，使其可決定陣列有幾個，並賦與陣列的值
+        /// </summary>
+        /// <param name="times">字串總數</param>
+        /// <returns>整數陣列</returns>
+        public static int[] Write_Int_Array(int times)
+        {
+            int[] ints = new int[times];
+            for (int i = 0; i < times; i++)
+            {
+                Console.WriteLine($"請輸入第{i + 1}位整數");
+                ints[i] = IntputString(Console.ReadLine());
+            }
+            return ints;
+        }
+
+        /// <summary>
+        /// 將整數陣列升序排列
+        /// </summary>
+        /// <param name="ints">整數陣列名稱</param>
+        /// <returns>升序整數陣列</returns>
+        public static void Sort_Int_Array(int[] ints)
+        {
+            for (int i = 0; i < ints.Length - 1; i++)
+            {
+                for (int j = 0; j < ints.Length - 1; j++)
+                {
+                    if (ints[j] > ints[j + 1]) //前面的值大於後面的值 #升冪
+                    {
+                        int temp = ints[j];
+                        ints[j] = ints[j + 1];
+                        ints[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 字串顯示，並加上|
+        /// </summary>
+        /// <param name="s1">字串名稱</param>
+        public static void String_Array_AddLine(string[] s1)
+        {
+            for (int i = 0; i < s1.Length-1; i++)
+            {
+                Console.Write(s1[i]);
+                Console.Write("|");
+            }
+            Console.Write(s1[s1.Length-1]);
         }
     }
 }
