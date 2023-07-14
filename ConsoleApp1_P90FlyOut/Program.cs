@@ -11,6 +11,31 @@ namespace ConsoleApp1_P90FlyOut
         static void Main(string[] args)
         {
             GameShow();
+            Console.WriteLine("請輸入玩家A的姓名");
+            PlayerNames[0] = Console.ReadLine();
+            while (PlayerNames[0] =="")
+            {
+                Console.WriteLine("姓名不得為空，請重新輸入");
+                PlayerNames[0] = Console.ReadLine();
+            }
+
+            Console.WriteLine("請輸入玩家B的姓名");
+            PlayerNames[1] = Console.ReadLine();
+            while (PlayerNames[1] == "" || PlayerNames[0] == PlayerNames[1])
+            {
+                if (PlayerNames[1]== "")
+                {
+                    Console.WriteLine("姓名不得為空，請重新輸入");
+                    PlayerNames[1] = Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("姓名不得與玩家A相同，請重新輸入");
+                    PlayerNames[1] = Console.ReadLine();
+                }
+            }
+
+
             InitailMaps();
             DrawMaps();
             Console.ReadKey();
@@ -25,6 +50,11 @@ namespace ConsoleApp1_P90FlyOut
         /// 使用靜態int陣列來宣告兩玩家位置
         /// </summary>
         static int[] PlayerPos = new int[2];
+
+        /// <summary>
+        /// 使用靜態string陣列來宣告兩玩家姓名
+        /// </summary>
+        static string[] PlayerNames = new string[2];
 
         /// <summary>
         /// 遊戲一開始的固定標題
@@ -81,7 +111,6 @@ namespace ConsoleApp1_P90FlyOut
                 Maps[index] = 4;
             }
         }
-
 
         /// <summary>
         /// 畫地圖
