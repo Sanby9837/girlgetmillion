@@ -11,6 +11,7 @@ namespace ConsoleApp1_P90FlyOut
         static void Main(string[] args)
         {
             GameShow();
+            #region 輸入玩家姓名
             Console.WriteLine("請輸入玩家A的姓名");
             PlayerNames[0] = Console.ReadLine();
             while (PlayerNames[0] =="")
@@ -34,8 +35,20 @@ namespace ConsoleApp1_P90FlyOut
                     PlayerNames[1] = Console.ReadLine();
                 }
             }
+            #endregion
 
+            //清除畫面資料
+            Console.Clear();
+            GameShow();
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"第一名玩家姓名為{PlayerNames[0]}，地圖上會使用A顯示");
+            Console.WriteLine($"第二名玩家姓名為{PlayerNames[1]}，地圖上會使用B顯示");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine($"｜幸運輪盤：1.交換位置 2.轟炸對方，後退6格");
+            Console.WriteLine($"｜地雷：");
+            Console.WriteLine($"｜暫停：停一回合");
+            Console.WriteLine($"｜時光隧道：前進10格");
             InitailMaps();
             DrawMaps();
             Console.ReadKey();
@@ -117,6 +130,8 @@ namespace ConsoleApp1_P90FlyOut
         /// </summary>
         public static void DrawMaps()
         {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("圖例----->  ！：幸運輪盤　＊：地雷　｜：暫停　卍：時光隧道");
             //第一行(0~29)
             for (int i = 0; i < 30; i++)
             {
@@ -214,5 +229,6 @@ namespace ConsoleApp1_P90FlyOut
             }//else
             return str;
         }
+
     }
 }
