@@ -14,7 +14,7 @@ namespace ConsoleApp1_P90FlyOut
             #region 輸入玩家姓名
             Console.WriteLine("請輸入玩家A的姓名");
             PlayerNames[0] = Console.ReadLine();
-            while (PlayerNames[0] =="")
+            while (PlayerNames[0] == "")
             {
                 Console.WriteLine("姓名不得為空，請重新輸入");
                 PlayerNames[0] = Console.ReadLine();
@@ -24,7 +24,7 @@ namespace ConsoleApp1_P90FlyOut
             PlayerNames[1] = Console.ReadLine();
             while (PlayerNames[1] == "" || PlayerNames[0] == PlayerNames[1])
             {
-                if (PlayerNames[1]== "")
+                if (PlayerNames[1] == "")
                 {
                     Console.WriteLine("姓名不得為空，請重新輸入");
                     PlayerNames[1] = Console.ReadLine();
@@ -46,11 +46,21 @@ namespace ConsoleApp1_P90FlyOut
             Console.WriteLine($"第二名玩家姓名為{PlayerNames[1]}，地圖上會使用B顯示");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine($"｜幸運輪盤：1.交換位置 2.轟炸對方，後退6格");
-            Console.WriteLine($"｜地雷：");
+            Console.WriteLine($"｜地雷：退6格");
             Console.WriteLine($"｜暫停：停一回合");
-            Console.WriteLine($"｜時光隧道：前進10格");
+            Console.WriteLine($"｜時光隧道：進10格");
             InitailMaps();
             DrawMaps();
+
+            //兩玩家沒有任一人在終點，就不停的玩遊戲
+            while (PlayerPos[0] < 99 && PlayerPos[1] < 99)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    PlayGame(i);
+                }
+            }
+
             Console.ReadKey();
         }
 
@@ -135,12 +145,12 @@ namespace ConsoleApp1_P90FlyOut
             //第一行(0~29)
             for (int i = 0; i < 30; i++)
             {
-                Console.Write(DrawMapsFix(i));   
+                Console.Write(DrawMapsFix(i));
             }
-            
+
             //換行
             Console.WriteLine();
-            
+
             //第2~6行(0~28空白，第29格放30~34的路途)
             for (int i = 30; i < 35; i++)
             {
@@ -157,7 +167,7 @@ namespace ConsoleApp1_P90FlyOut
             {
                 Console.Write(DrawMapsFix(i));
             }
-            
+
             //換行
             Console.WriteLine();
 
@@ -228,6 +238,86 @@ namespace ConsoleApp1_P90FlyOut
                 }//switch
             }//else
             return str;
+        }
+
+        /// <summary>
+        /// 玩遊戲
+        /// </summary>
+        public static void PlayGame(int player)
+        {
+            Console.WriteLine($"請玩家{PlayerNames[player]}點選任意鍵並投擲骰子");
+            Console.ReadKey(true);
+            Console.WriteLine($"{PlayerNames[player]}骰出了{4}");
+            PlayerPos[player] += 4;
+            Console.ReadKey(true);
+            Console.WriteLine($"{PlayerNames[player]}開始飛行");
+            Console.ReadKey(true);
+
+            //執行玩家，可能會1.踩到另一名玩家2.踩到各種可能性
+            if (PlayerPos[player] == PlayerPos[1 - player])
+            {
+                Console.WriteLine($"玩家{PlayerNames[player]}踩到另一名玩家位置，另一名玩家退後6格");
+                PlayerPos[1 - player] -= 6;
+                Console.ReadKey(true);
+            }
+            else
+            {
+                switch (Maps[PlayerPos[player]])
+                {
+                    case 0:
+                        Console.WriteLine("呼~~   您安然無恙！");
+                        break;
+                    case 1:
+                        Console.WriteLine($"{PlayerNames[player]}，您踩中【幸運輪盤】了！       可以有兩個選擇，輸入(1)將兩方交換位置或(2)對方退後六格");
+                        string input = Console.ReadLine();
+                        while (true)
+                        {
+                            if (input == "1")
+                            {
+                                Console.WriteLine($"{PlayerNames[player]}，您選擇(1)，故兩方位置交換");
+                                int temp = PlayerPos[player];
+                                PlayerPos[player] = PlayerPos[1 - player];
+                                PlayerPos[1 - player] = temp;
+                                Console.WriteLine("已交換完成，點選任意鍵繼續遊戲");
+                                Console.ReadKey(true);
+                                break;
+                            }
+                            else if (input == "2")
+                            {
+                                Console.WriteLine($"{PlayerNames[player]}，您選擇(2)，轟炸對方，使其退後6格");
+                                PlayerPos[1 - player] -= 6;
+                                Console.WriteLine("轟炸完成，點選任意鍵繼續遊戲");
+                                Console.ReadKey(true);
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("請輸入(1) 或 (2)");
+                                input = Console.ReadLine();
+                            }
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine($"{PlayerNames[player]}，您踩中【地雷】了！       退後6格(〒︿〒)");
+                        PlayerPos[player] -= 6;
+                        Console.ReadKey(true);
+                        break;
+                    case 3:
+                        Console.WriteLine($"{PlayerNames[player]}，您踩中【暫停】了！       下一回合不能移動(〒︿〒)");
+                        Console.ReadKey(true);
+                        break;
+                    case 4:
+                        Console.WriteLine($"{PlayerNames[player]}，您踩中【時光隧道】了！       前進10格(ﾉ>ω<)ﾉ");
+                        PlayerPos[player] += 10;
+                        Console.ReadKey(true);
+                        break;
+                }//switch
+            }//if else
+
+            Console.WriteLine($"{PlayerNames[player]}飛行完畢，任意點選以更新地圖");
+            Console.ReadKey(true);
+            Console.Clear();
+            DrawMaps();
         }
 
     }
