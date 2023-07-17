@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,12 +56,34 @@ namespace ConsoleApp1_P90FlyOut
             //兩玩家沒有任一人在終點，就不停的玩遊戲
             while (PlayerPos[0] < 99 && PlayerPos[1] < 99)
             {
-                for (int i = 0; i < 2; i++)
+                if (Flags[0] == false)
                 {
-                    PlayGame(i);
+                    PlayGame(0);
+                }
+                else
+                {
+                    Flags[0] = true;
+                }
+                if (PlayerPos[0] >= 99)
+                {
+                    Console.WriteLine($"恭喜玩家{PlayerNames[0]}大獲全勝");
+                    break;
+                }
+                if (Flags[1] == false)
+                {
+                    PlayGame(1);
+                }
+                else
+                {
+                    Flags[1] = true;
+                }
+                if (PlayerPos[1] >= 99)
+                {
+                    Console.WriteLine($"恭喜玩家{PlayerNames[1]}大獲全勝");
+                    break;
                 }
             }
-
+            Console.WriteLine(" ！！！！！Game Over ！！！！！");
             Console.ReadKey();
         }
 
@@ -78,6 +101,11 @@ namespace ConsoleApp1_P90FlyOut
         /// 使用靜態string陣列來宣告兩玩家姓名
         /// </summary>
         static string[] PlayerNames = new string[2];
+
+        /// <summary>
+        /// 兩個玩家的標記
+        /// </summary>
+        static bool[] Flags = new bool[2];  //預設flase
 
         /// <summary>
         /// 遊戲一開始的固定標題
@@ -245,10 +273,12 @@ namespace ConsoleApp1_P90FlyOut
         /// </summary>
         public static void PlayGame(int player)
         {
+            Random r = new Random();
+            int rNumber = r.Next(1, 7);
             Console.WriteLine($"請玩家{PlayerNames[player]}點選任意鍵並投擲骰子");
             Console.ReadKey(true);
-            Console.WriteLine($"{PlayerNames[player]}骰出了{4}");
-            PlayerPos[player] += 4;
+            Console.WriteLine($"{PlayerNames[player]}骰出了{rNumber}");
+            PlayerPos[player] += rNumber;
             Console.ReadKey(true);
             Console.WriteLine($"{PlayerNames[player]}開始飛行");
             Console.ReadKey(true);
@@ -304,6 +334,7 @@ namespace ConsoleApp1_P90FlyOut
                         break;
                     case 3:
                         Console.WriteLine($"{PlayerNames[player]}，您踩中【暫停】了！       下一回合不能移動(〒︿〒)");
+                        Flags[PlayerPos[player]] = true;
                         Console.ReadKey(true);
                         break;
                     case 4:
@@ -314,10 +345,34 @@ namespace ConsoleApp1_P90FlyOut
                 }//switch
             }//if else
 
-            Console.WriteLine($"{PlayerNames[player]}飛行完畢，任意點選以更新地圖");
+            Console.WriteLine($"{PlayerNames[player]}飛行完畢，任意點選，更新地圖");
             Console.ReadKey(true);
+            ChangePos();
             Console.Clear();
             DrawMaps();
+        }
+
+        /// <summary>
+        /// 玩家座標改變時，就需要調用
+        /// </summary>
+        public static void ChangePos()
+        {
+            if (PlayerPos[0] < 0)
+            {
+                PlayerPos[0] = 0;
+            }
+            if (PlayerPos[0] <= 99)
+            {
+                PlayerPos[0] = 99;
+            }
+            if (PlayerPos[1] < 0)
+            {
+                PlayerPos[1] = 0;
+            }
+            if (PlayerPos[1] <= 99)
+            {
+                PlayerPos[1] = 99;
+            }
         }
 
     }
