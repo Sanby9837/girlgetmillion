@@ -25,12 +25,13 @@ namespace ConsoleApp1_P98
 
         static void P98()
         {
-            //建立了一個類的物件
+            //實例化Person這個類的物件
             Person sanby = new Person();
             sanby._name = "33";
-            sanby._age = 27;
+            sanby._age = 28;
             sanby._gender = '女';
 
+            //調用sanby這個物件去執行Person類下的自我介紹方法
             sanby.Self();
             Console.ReadKey();
         }

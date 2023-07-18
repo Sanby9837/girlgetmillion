@@ -22,5 +22,13 @@ namespace ConsoleApp1_P98
             //加上this表示當前這個類的對象
         }
 
+        /// <summary>
+        /// _name的屬性
+        /// </summary>
+        public string Name
+        {
+            get { return _name; } 
+            set { _name = value; }
+        }
     }
 }
