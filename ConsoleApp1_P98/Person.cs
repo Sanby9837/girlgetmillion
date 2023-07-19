@@ -15,13 +15,18 @@ namespace ConsoleApp1_P98
         public int _age;
         public char _gender;
 
-
+        /// <summary>
+        /// 自我介紹方法，直接調用變量
+        /// </summary>
         public void Self()
         {
             Console.WriteLine($"我叫{this._name}，今年{this._age}歲，是個{this._gender}生");
             //加上this表示當前這個類的對象
         }
-
+        
+        /// <summary>
+        /// 自我介紹方法，調用屬性
+        /// </summary>
         public void Self2()
         {
             Console.WriteLine($"我叫{this.Name}，今年{this.Age}歲，是個{this.Gender}生");
@@ -40,6 +45,9 @@ namespace ConsoleApp1_P98
             set { _name = value; }
         }
 
+        /// <summary>
+        /// Age屬性
+        /// </summary>
         public int Age
         {
             get { return _age; }
@@ -53,6 +61,9 @@ namespace ConsoleApp1_P98
             }
         }
 
+        /// <summary>
+        /// Gender屬性
+        /// </summary>
         public char Gender
         {
             get

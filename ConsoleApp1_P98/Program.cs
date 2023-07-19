@@ -20,6 +20,10 @@ namespace ConsoleApp1_P98
                 case 100:
                     P100();
                     break;
+                case 103:
+                    P103();
+                    break;
+
 
                 default:
                     break;
@@ -55,5 +59,18 @@ namespace ConsoleApp1_P98
 
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// 構造含式
+        /// </summary>
+        static void P103()
+        {
+            Student sanby = new Student("Sanby",100,'女',90,95,80);
+            sanby.Self();
+            sanby.Score();
+            Console.ReadKey();
+        }
+
+
     }
 }
