@@ -46,7 +46,7 @@ namespace ConsoleApp1_P98
         /// </summary>
         static void P100()
         {
-            //使用屬性的方式進行賦值
+            //使用屬性的方式進行賦值(將物件初始化)
             Person gidle = new Person();
             gidle.Name = "舒華";
             gidle.Age = -1;

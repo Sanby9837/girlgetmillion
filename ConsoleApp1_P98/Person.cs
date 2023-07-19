@@ -57,9 +57,9 @@ namespace ConsoleApp1_P98
         {
             get
             {
-                if (_gender != '男' && _gender != '女')
+                if (this.Name == "舒華")
                 {
-                    return _gender = '男';
+                    return _gender = '女';
                 }
                 return _gender;
             }
