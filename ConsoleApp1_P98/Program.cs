@@ -17,12 +17,17 @@ namespace ConsoleApp1_P98
                 case 98:
                     P98();
                     break;
+                case 100:
+                    P100();
+                    break;
 
                 default:
                     break;
             }
         }
-
+        /// <summary>
+        /// 物件導向
+        /// </summary>
         static void P98()
         {
             //實例化Person這個類的物件
@@ -33,6 +38,21 @@ namespace ConsoleApp1_P98
 
             //調用sanby這個物件去執行Person類下的自我介紹方法
             sanby.Self();
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 屬性
+        /// </summary>
+        static void P100()
+        {
+            //使用屬性的方式進行賦值
+            Person gidle = new Person();
+            gidle.Name = "舒華";
+            gidle.Age = -1;
+            gidle.Gender = '嗨';
+            gidle.Self2();
+
             Console.ReadKey();
         }
     }
