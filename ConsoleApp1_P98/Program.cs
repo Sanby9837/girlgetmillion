@@ -23,6 +23,9 @@ namespace ConsoleApp1_P98
                 case 103:
                     P103();
                     break;
+                case 104:
+                    P104();
+                    break;
 
 
                 default:
@@ -65,12 +68,25 @@ namespace ConsoleApp1_P98
         /// </summary>
         static void P103()
         {
-            Student sanby = new Student("Sanby",100,'女',90,95,80);
+            Student sanby = new Student("Sanby", 100, '女', 90, 95, 80);
             sanby.Self();
             sanby.Score();
+
+            Student kk = new Student("333", 20, '男', 50, 100, 70);
+            kk.Self();
+            kk.Score();
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// this
+        /// </summary>
+        static void P104()
+        {
+            Student ups = new Student("貨運", 50, 60, 65);
+            ups.Self();
+            ups.Score();
+            Console.ReadKey();
+        }
     }
 }

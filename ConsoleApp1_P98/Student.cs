@@ -117,5 +117,17 @@ namespace ConsoleApp1_P98
             this.ScoreMath = math;
             this.ScoreEnglish = english;
         }
+
+        /// <summary>
+        /// this調用這個class的其他構造函式
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="chinese"></param>
+        /// <param name="math"></param>
+        /// <param name="english"></param>
+        public Student(string name, int chinese, int math, int english):this(name,20,'O',chinese,math,english)
+        {
+
+        }
     }
 }
