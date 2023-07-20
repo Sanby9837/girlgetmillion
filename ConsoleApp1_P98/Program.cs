@@ -26,6 +26,9 @@ namespace ConsoleApp1_P98
                 case 104:
                     P104();
                     break;
+                case 106:
+                    P106();
+                    break;
 
 
                 default:
@@ -89,6 +92,15 @@ namespace ConsoleApp1_P98
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// 練習題
+        /// </summary>
+        static void P106()
+        {
+            Console.WriteLine("請輸入距離");
+            Ticket t1 = new Ticket(Convert.ToInt32(Console.ReadLine()));
+            t1.ShowTicket();
+            Console.ReadKey();
+        }
     }
 }
