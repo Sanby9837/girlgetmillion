@@ -47,7 +47,7 @@ namespace ConsoleApp1_P98
         }
 
 
-        //在構造函式中賦值，並判斷不能等於0
+        //在構造函式中賦值，並判斷不能小於0
         public Ticket(double distance)
         {
             if (distance < 0)
