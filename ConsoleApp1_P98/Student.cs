@@ -9,6 +9,15 @@ namespace ConsoleApp1_P98
 {
     internal class Student
     {
+        /// <summary>
+        /// 解構子 Destructor
+        /// GC Garbage Collection
+        /// 會在程序結束後，才會被執行釋放資源
+        /// </summary>
+        ~Student()
+        {
+
+        }
         private string _name;
         private char _gender;
         private int _age;

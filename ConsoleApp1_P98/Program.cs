@@ -88,5 +88,7 @@ namespace ConsoleApp1_P98
             ups.Score();
             Console.ReadKey();
         }
+
+
     }
 }
