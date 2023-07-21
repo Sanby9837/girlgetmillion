@@ -109,7 +109,7 @@ namespace ConsoleApp1_P98
         }
 
         /// <summary>
-        /// new的時候，會被執行
+        /// 構造函式--new的時候，會被執行
         /// </summary>
         /// <param name="name"></param>
         /// <param name="age"></param>
@@ -128,7 +128,7 @@ namespace ConsoleApp1_P98
         }
 
         /// <summary>
-        /// this調用這個class的其他構造函式
+        /// 構造函式--使用this調用這個class中的其他構造函式
         /// </summary>
         /// <param name="name"></param>
         /// <param name="chinese"></param>
