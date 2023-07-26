@@ -20,12 +20,18 @@ namespace ConsoleApp1_P109
                 case 111:
                     P111();
                     break;
+                case 112:
+                    P112();
+                    break;
 
                 default:
                     break;
             }
         }
 
+        /// <summary>
+        /// string 介紹
+        /// </summary>
         static void P111()
         {
             #region 將字串轉為char陣列
@@ -143,11 +149,29 @@ namespace ConsoleApp1_P109
             string p111_date = Console.ReadLine();
             char[] date_s = { '-', '/'};
             string[] p111_Date_Array = p111_date.Split(date_s,StringSplitOptions.RemoveEmptyEntries);
-
             Console.WriteLine($"{p111_Date_Array[0]}年，{p111_Date_Array[1]}月，{p111_Date_Array[2]}日");
             Console.ReadKey();
-
             #endregion
         }
+
+        /// <summary>
+        /// string介紹2
+        /// </summary>
+        static void P112()
+        {
+            string p112_Str = "Sanby好可愛";
+            if (p112_Str.Contains("好可愛"))
+            {
+                p112_Str = p112_Str.Replace("好可愛","在作夢");
+            }
+            Console.WriteLine(p112_Str);
+            Console.ReadKey();
+
+            string p112_Str_2 = p112_Str.Substring(5);
+            Console.WriteLine(p112_Str_2);
+            Console.ReadKey();
+
+        }
+
     }
 }
