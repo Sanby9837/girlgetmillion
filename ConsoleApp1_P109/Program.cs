@@ -121,7 +121,7 @@ namespace ConsoleApp1_P109
             }
 
             //也可以透過Equals方法，使用StringComparison這個enum選擇OrdinalIgnoreCase方式比較
-            if (p111_likeclass1.Equals(p111_likeclass2,StringComparison.OrdinalIgnoreCase))
+            if (p111_likeclass1.Equals(p111_likeclass2, StringComparison.OrdinalIgnoreCase))
             {
                 Console.WriteLine($"太好了! 你們都喜歡{p111_likeclass1}");
             }
@@ -139,7 +139,7 @@ namespace ConsoleApp1_P109
             string[] p111_split2 = p111_split1.Split(chs, StringSplitOptions.RemoveEmptyEntries);
 
             //使用 string.Join 方法將 p111_split2 轉換回字串
-            p111_split1 = String.Join("-",p111_split2);
+            p111_split1 = String.Join("-", p111_split2);
             Console.WriteLine(p111_split1);
             Console.ReadKey();
             #endregion
@@ -147,8 +147,8 @@ namespace ConsoleApp1_P109
             #region 練習題-請用戶輸入2023/07/25，接著將輸入的字串轉換為2023年7月25日
             Console.WriteLine("請輸入欲分析的日期");
             string p111_date = Console.ReadLine();
-            char[] date_s = { '-', '/'};
-            string[] p111_Date_Array = p111_date.Split(date_s,StringSplitOptions.RemoveEmptyEntries);
+            char[] date_s = { '-', '/' };
+            string[] p111_Date_Array = p111_date.Split(date_s, StringSplitOptions.RemoveEmptyEntries);
             Console.WriteLine($"{p111_Date_Array[0]}年，{p111_Date_Array[1]}月，{p111_Date_Array[2]}日");
             Console.ReadKey();
             #endregion
@@ -160,17 +160,32 @@ namespace ConsoleApp1_P109
         static void P112()
         {
             string p112_Str = "Sanby好可愛";
+
+            //Contains 包含
             if (p112_Str.Contains("好可愛"))
             {
-                p112_Str = p112_Str.Replace("好可愛","在作夢");
+                //Replace替換
+                p112_Str = p112_Str.Replace("好可愛", "在作夢");
             }
             Console.WriteLine(p112_Str);
             Console.ReadKey();
 
-            string p112_Str_2 = p112_Str.Substring(5);
+            //Substring 擷取 (從第5個下標開始擷，共擷3個位置)
+            string p112_Str_2 = p112_Str.Substring(5, 3);
             Console.WriteLine(p112_Str_2);
             Console.ReadKey();
 
+            //IndexOf找特定文字，第一次出現在第幾個位置
+            //LastIndexOf找特定文字，最後一次出現在第幾個位置
+            int index = p112_Str.IndexOf('y');
+            Console.WriteLine(index);
+            Console.ReadKey();
+
+            string path = @"c:\a\b\v\d\dfs\vsadf\dfsevg\我好棒唷.doc";
+            int index_1 = path.LastIndexOf("\\");
+            path = path.Substring(index_1 + 1);
+            Console.WriteLine(path);
+            Console.ReadKey();
         }
 
     }
