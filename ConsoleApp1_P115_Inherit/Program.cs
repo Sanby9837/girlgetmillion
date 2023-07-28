@@ -10,6 +10,10 @@ namespace ConsoleApp1_P115_Inherit
     {
         static void Main(string[] args)
         {
+            Student s1 = new Student();
+            s1.Name = "s1";
+            Console.WriteLine(s1.Name);
+            Console.ReadKey();
         }
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1_P115_Inherit
 {
-    internal class Teacher
+    internal class Teacher : Person
     {
         private double _salary;
 
         public double Salary
         {
             get { return _salary; }
-            set { _salary = value; } 
+            set { _salary = value; }
         }
 
         public void Teach()

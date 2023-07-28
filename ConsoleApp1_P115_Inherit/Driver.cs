@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1_P115_Inherit
 {
-    internal class Driver
+    internal class Driver : Person
     {
         private string _area;
         public string Area
