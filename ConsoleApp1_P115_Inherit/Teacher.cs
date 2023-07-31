@@ -20,5 +20,10 @@ namespace ConsoleApp1_P115_Inherit
         {
             Console.WriteLine("老師需要會教課");
         }
+
+        public Teacher(string Name, int Age, char Gender) : base(Name, Age, Gender)
+        {
+            this.Salary = Salary;
+        }
     }
 }

@@ -33,5 +33,12 @@ namespace ConsoleApp1_P115_Inherit
         {
             Console.WriteLine($"大家好，我叫{Name},今年{Age}，是一位{Gender}生");
         }
+
+        public Person(string Name,int Age,char Gender)
+        {
+            this.Name = Name;
+            this.Age = Age;
+            this.Gender = Gender;
+        }
     }
 }

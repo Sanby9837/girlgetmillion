@@ -19,5 +19,10 @@ namespace ConsoleApp1_P115_Inherit
         {
             Console.WriteLine("司機需要會開車");
         }
+
+        public Driver(string Name,int Age,char Gender,string Area) : base(Name,Age,Gender)
+        {
+            this.Area = Area;
+        }
     }
 }

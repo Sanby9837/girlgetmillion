@@ -17,7 +17,12 @@ namespace ConsoleApp1_P115_Inherit
 
         public void Study()
         {
-            Console.WriteLine("學生需要會讀書");
+            Console.WriteLine($"學生需要會讀書，學號是{Id}");
+        }
+
+        public Student(string Name, int Age, char Gender, int Id) : base(Name,Age,Gender)
+        {
+            this.Id = Id;
         }
     }
 }
