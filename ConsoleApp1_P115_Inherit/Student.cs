@@ -20,6 +20,11 @@ namespace ConsoleApp1_P115_Inherit
             Console.WriteLine($"學生需要會讀書，學號是{Id}");
         }
 
+        public new void Self()
+        {
+            Console.WriteLine("這是學生的自我介紹");
+        }
+
         public Student(string Name, int Age, char Gender, int Id) : base(Name,Age,Gender)
         {
             this.Id = Id;
