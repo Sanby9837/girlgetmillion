@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp01_10", "ConsoleApp01_10\ConsoleApp01_10.csproj", "{ADBE0BC2-C958-4CDF-83E6-9992E9A88E61}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P109", "ConsoleApp1_P109\ConsoleApp1_P109.csproj", "{321D9DF6-B07F-4A04-B642-F5F7058783B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P115_Inherit", "ConsoleApp1_P115_Inherit\ConsoleApp1_P115_Inherit.csproj", "{4D6F8761-A190-4700-A8CC-2B2D82989F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P120", "ConsoleApp1_P120\ConsoleApp1_P120.csproj", "{6209F449-7E1A-48A2-9E45-793A2F7812E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{4D6F8761-A190-4700-A8CC-2B2D82989F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D6F8761-A190-4700-A8CC-2B2D82989F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D6F8761-A190-4700-A8CC-2B2D82989F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6209F449-7E1A-48A2-9E45-793A2F7812E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6209F449-7E1A-48A2-9E45-793A2F7812E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6209F449-7E1A-48A2-9E45-793A2F7812E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6209F449-7E1A-48A2-9E45-793A2F7812E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
