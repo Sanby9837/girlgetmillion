@@ -28,6 +28,9 @@ namespace ConsoleApp1_P120
                 case 124:
                     P124();
                     break;
+                case 125:
+                    P125();
+                    break;
                 default: break;
             }
         }
@@ -237,6 +240,33 @@ namespace ConsoleApp1_P120
             for (int i = 0; i < array_10.Count; i++)
             {
                 Console.WriteLine($"{array_10[i]}--");
+            }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// HashTable
+        /// </summary>
+        static void P125()
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add(1, true);
+            ht.Add(2, 'c');
+            ht.Add(3,"第3個");
+            ht.Add(4,4);
+            ht.Add(false, "kkk");
+            ht[6] = "嘿嘿嘿";
+            ht[3] = "我要取代第3個";
+
+            foreach (var item in ht.Keys)
+            {
+                Console.WriteLine($"key值是{item}，值是{ht[item]}");
+            }
+            Console.WriteLine("-------------------------");
+            int[] num = { 1, 2, 3, 4, 5, 6, 7 };
+            foreach (var item in num)
+            {
+                Console.WriteLine(item);
             }
             Console.ReadKey();
         }
