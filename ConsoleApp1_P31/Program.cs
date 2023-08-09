@@ -125,7 +125,6 @@ namespace ConsoleApp1_P31
                 Console.WriteLine("恭喜不用煮飯");
                 Console.ReadKey();
             }
-
             else
             {
                 Console.WriteLine("請乖乖煮飯");
@@ -371,22 +370,20 @@ namespace ConsoleApp1_P31
             //Console.ReadKey();
 
             //方法二
-            bool p37_Check = true;
             Console.WriteLine("請輸入數字");
-            try
+            while (true)
             {
-                p37_Number = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    p37_Number = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch
+                {
+                    Console.Write("輸入的內容無法轉換為數字，請重新輸入");
+                }
             }
-            catch
-            {
-                Console.Write("輸入的內容無法轉換為數字");
-                p37_Check = false;
-            }
-
-            if (p37_Check)
-            {
-                Console.WriteLine($"輸入的數值為 {p37_Number * 2}");
-            }
+            Console.WriteLine($"輸入的數值為 {p37_Number * 2}");
             Console.ReadKey();
         }
 

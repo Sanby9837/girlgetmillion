@@ -23,7 +23,7 @@ namespace ConsoleApp1_P11
             //字串 char '' (只能存入一個字、不能為空)
             //數值 int 整數
             //數值 double 整數&小數
-            //金錢 decimal 值後要加加m
+            //金錢 decimal 值後要加m
 
             float ddd = 3.3f;
             double dd = 3.33;

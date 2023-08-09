@@ -383,7 +383,7 @@ namespace ConsoleApp1_P64
             //        }
             //    }
             //}
-            Array.Sort(p71_ints);  //Sort升冪 Reverse倒牌
+            Array.Sort(p71_ints);  //Sort升冪 Reverse倒排
             for (int i = 0; i < p71_ints.Length; i++)
             {
                 Console.Write($"{p71_ints[i]} ");
