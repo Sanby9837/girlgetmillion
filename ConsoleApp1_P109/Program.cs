@@ -285,7 +285,6 @@ namespace ConsoleApp1_P109
             }
             Console.ReadKey();
             Console.WriteLine("");
-
         }
 
 

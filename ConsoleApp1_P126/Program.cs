@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,9 @@ namespace ConsoleApp1_P126
             {
                 case 126:
                     P126();
+                    break;
+                case 128:
+                    P128();
                     break;
 
                 default: break;
@@ -49,6 +53,24 @@ namespace ConsoleApp1_P126
                     Console.Write(intput[i]);
                 }
             }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// File
+        /// </summary>
+        static void P128()
+        {
+            //File.Create(@"C:\Users\User\Desktop\new.txt");
+            //Console.WriteLine("建立完成");
+            //Console.ReadKey();
+
+            //File.Delete(@"C:\Users\User\Desktop\new.txt");
+            //Console.WriteLine("刪除成功");
+            //Console.ReadKey();
+
+            File.Copy(@"C:\Users\User\Desktop\new.txt", @"C:\Users\User\Desktop\copy.txt");
+            Console.WriteLine("複製完成");
             Console.ReadKey();
         }
     }
