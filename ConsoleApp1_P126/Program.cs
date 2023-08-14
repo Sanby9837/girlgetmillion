@@ -24,6 +24,12 @@ namespace ConsoleApp1_P126
                 case 128:
                     P128();
                     break;
+                case 132:
+                    P132();
+                    break;
+                case 133:
+                    P133();
+                    break;
 
                 default: break;
             }
@@ -71,6 +77,41 @@ namespace ConsoleApp1_P126
 
             File.Copy(@"C:\Users\User\Desktop\new.txt", @"C:\Users\User\Desktop\copy.txt");
             Console.WriteLine("複製完成");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// File
+        /// </summary>
+        static void P132()
+        {
+            //File.WriteAllLines(@"C:\\Users\\User\\Desktop\\new.txt",new string[] {"AAA","BBB"});
+            //Console.WriteLine("建立完成");
+
+            File.AppendAllText(@"C:\\Users\\User\\Desktop\\new.txt", "我是追加文字");
+            Console.WriteLine("追加完成");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// List
+        /// </summary>
+        static void P133()
+        {
+            List<int> list_1 = new List<int>();
+            list_1.Add(1);
+            list_1.Add(2);
+
+            list_1.AddRange(new int[] { 4, 5, 6 });
+            list_1.AddRange(list_1);
+            list_1.Remove(5);
+
+            for (int i = 0; i < list_1.Count; i++)
+            {
+                Console.WriteLine(list_1[i]);
+            }
+
+            int[] list_array = list_1.ToArray();
             Console.ReadKey();
         }
     }
