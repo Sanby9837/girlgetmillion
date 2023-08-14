@@ -150,10 +150,10 @@ namespace ConsoleApp1_P126
                 Console.WriteLine($"Key {kvp.Key}，值  {kvp.Value}");
             }
 
-            foreach (var item in dic.Keys)
-            {
-                Console.WriteLine($"key {item}  值  {dic[item]}"); 
-            }
+            //foreach (var item in dic.Keys)
+            //{
+            //    Console.WriteLine($"key {item}  值  {dic[item]}"); 
+            //}
             Console.ReadLine();
         }
     }
