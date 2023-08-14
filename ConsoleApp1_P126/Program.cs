@@ -30,6 +30,12 @@ namespace ConsoleApp1_P126
                 case 133:
                     P133();
                     break;
+                case 134:
+                    P134();
+                    break;
+                case 135:
+                    P135();
+                    break;
 
                 default: break;
             }
@@ -113,6 +119,42 @@ namespace ConsoleApp1_P126
 
             int[] list_array = list_1.ToArray();
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 裝箱、拆箱
+        /// </summary>
+        static void P134()
+        {
+            int n = 10;
+            // 值類型裝箱成引用類型
+            object o = n;
+
+            // 引用類型拆箱成值類型
+            int nn = (int)o;
+        }
+
+        /// <summary>
+        /// Dictionary
+        /// </summary>
+        static void P135()
+        {
+            Dictionary<int, string> dic = new Dictionary<int, string>();
+            dic.Add(1, "老高");
+            dic.Add(2, "小茉");
+            dic.Add(3, "三歲抬頭");
+            dic[1] = "歡迎光臨";
+
+            foreach (KeyValuePair<int,string> kvp in dic)
+            {
+                Console.WriteLine($"Key {kvp.Key}，值  {kvp.Value}");
+            }
+
+            foreach (var item in dic.Keys)
+            {
+                Console.WriteLine($"key {item}  值  {dic[item]}"); 
+            }
+            Console.ReadLine();
         }
     }
 }
