@@ -36,6 +36,9 @@ namespace ConsoleApp1_P126
                 case 135:
                     P135();
                     break;
+                case 136:
+                    P136();
+                    break;
 
                 default: break;
             }
@@ -145,7 +148,7 @@ namespace ConsoleApp1_P126
             dic.Add(3, "三歲抬頭");
             dic[1] = "歡迎光臨";
 
-            foreach (KeyValuePair<int,string> kvp in dic)
+            foreach (KeyValuePair<int, string> kvp in dic)
             {
                 Console.WriteLine($"Key {kvp.Key}，值  {kvp.Value}");
             }
@@ -155,6 +158,85 @@ namespace ConsoleApp1_P126
             //    Console.WriteLine($"key {item}  值  {dic[item]}"); 
             //}
             Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Dictionary練習題
+        /// </summary>
+        static void P136()
+        {
+            //練習題：將一個陣列中的奇數、偶數各自放到兩個陣列中，
+            //最後將兩個陣列轉成一個集合，奇數顯示在左邊，偶數顯示在右邊
+            int[] int_Array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<int> list_i = new List<int>();
+            List<int> list_ii = new List<int>();
+            for (int i = 0; i < int_Array.Length; i++)
+            {
+                if (int_Array[i] % 2 == 0)
+                {
+                    list_ii.Add(int_Array[i]);
+                }
+                else
+                {
+                    list_i.Add(int_Array[i]);
+                }
+            }
+
+            List<int> list_all = new List<int>();
+            list_all.AddRange(list_i);
+            list_all.AddRange(list_ii);
+
+            foreach (int i in list_all)
+            {
+                Console.Write(i + " ");
+            }
+            Console.ReadKey();
+            Console.WriteLine("-------------------------");
+            //輸入字串，透過foreach將輸入的字串賦值給一個字串陣列
+            Console.WriteLine("請輸入字串");
+            string str_1 = Console.ReadLine();
+
+            //也可以指宣告為陣列
+            //char[] char_1 = new char[str_1.Length];
+            List<char> char_1 = new List<char>();
+            foreach (var item in str_1)
+            {
+                char_1.Add(item);
+            }
+
+            for (int i = 0; i < char_1.Count; i++)
+            {
+                Console.Write($"{char_1[i]}    ");
+            }
+            Console.ReadKey();
+            Console.WriteLine("-------------------------");
+
+            //統計 Welcome to Taiwan每個字出現的字數，不考慮大小寫
+            string str_3 = "Welcome to Taiwan";
+            string str_3_low = str_3.ToLower();
+            Dictionary<char, int> dic = new Dictionary<char, int>();
+            foreach (var item in str_3_low)
+            {
+                if (item == ' ')
+                {
+                    continue;
+                }
+                //如果已經有出現過，則出現次數(值+1)
+                if (dic.ContainsKey(item))
+                {
+                    dic[item]++;
+                }
+                //沒出現過就加元素進去，而且值是1
+                else
+                {
+                    dic[item] = 1;
+                }
+            }
+            foreach (var item in dic.Keys)
+            {
+                Console.WriteLine($"{item}出現了{dic[item]}次");
+            }
+            Console.ReadKey();
         }
     }
 }
