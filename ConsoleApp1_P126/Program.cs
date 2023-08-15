@@ -39,6 +39,9 @@ namespace ConsoleApp1_P126
                 case 136:
                     P136();
                     break;
+                case 137:
+                    P137();
+                    break;
 
                 default: break;
             }
@@ -161,7 +164,7 @@ namespace ConsoleApp1_P126
         }
 
         /// <summary>
-        /// Dictionary練習題
+        /// 集合的練習題
         /// </summary>
         static void P136()
         {
@@ -236,6 +239,26 @@ namespace ConsoleApp1_P126
             {
                 Console.WriteLine($"{item}出現了{dic[item]}次");
             }
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// FileStream
+        /// </summary>
+        static void P137()
+        {
+            FileStream fsRead = new FileStream(@"C:\Users\User\Desktop\137test.txt", FileMode.OpenOrCreate, FileAccess.Read);
+            byte[] buffer = new byte[1024 * 1024 * 5];
+            //return 本次實際讀到的有效字節
+            int i = fsRead.Read(buffer, 0, buffer.Length);
+            //將字節每一個元素按照指定的編碼格式解碼成字串
+            string book = Encoding.UTF8.GetString(buffer,0,i);
+            //關閉資料流
+            fsRead.Close();
+            //釋放資料流占用的資源
+            fsRead.Dispose();
+
+            Console.WriteLine(book);
             Console.ReadKey();
         }
     }
