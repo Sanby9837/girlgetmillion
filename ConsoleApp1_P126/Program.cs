@@ -46,6 +46,9 @@ namespace ConsoleApp1_P126
                 case 138:
                     P138();
                     break;
+                case 139:
+                    P139();
+                    break;
 
                 default: break;
             }
@@ -312,15 +315,36 @@ namespace ConsoleApp1_P126
                         //宣告本次讀取量
                         int r = ReadFS.Read(buffer, 0, buffer.Length);
                         //如果本次讀取量=0，表示沒有讀到資訊，跳出循環不再讀取
-                        if (r==0)
+                        if (r == 0)
                         {
                             break;
                         }
                         WriteFS.Write(buffer, 0, r);
                     }
-                    
+
                 }
             }
+        }
+
+        /// <summary>
+        /// StreamReader、StreamWriter
+        /// </summary>
+        static void P139()
+        {
+            using (StreamReader sr = new StreamReader(@"C:\Users\User\Desktop\137test.txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    Console.WriteLine(sr.ReadLine());
+                }
+            }
+            Console.ReadKey();
+            using (StreamWriter sw = new StreamWriter(@"C:\Users\User\Desktop\139test.txt",true))
+            {
+                sw.WriteLine("今天天氣真ㄉ讚");
+            }
+            Console.WriteLine("新增完成");
+            Console.ReadKey();
         }
     }
 }
