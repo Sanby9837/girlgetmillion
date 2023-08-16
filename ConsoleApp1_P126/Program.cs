@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,9 @@ namespace ConsoleApp1_P126
                     break;
                 case 137:
                     P137();
+                    break;
+                case 138:
+                    P138();
                     break;
 
                 default: break;
@@ -252,7 +256,7 @@ namespace ConsoleApp1_P126
             //return 本次實際讀到的有效字節
             int i = fsRead.Read(buffer, 0, buffer.Length);
             //將字節每一個元素按照指定的編碼格式解碼成字串
-            string book = Encoding.UTF8.GetString(buffer,0,i);
+            string book = Encoding.UTF8.GetString(buffer, 0, i);
             //關閉資料流
             fsRead.Close();
             //釋放資料流占用的資源
@@ -267,9 +271,55 @@ namespace ConsoleApp1_P126
                 Console.WriteLine("請輸入想要加入的文字");
                 string str = Console.ReadLine();
                 byte[] write_byte = Encoding.UTF8.GetBytes(str);
-                fsWrite.Write(write_byte,0,write_byte.Length);
+                fsWrite.Write(write_byte, 0, write_byte.Length);
                 Console.WriteLine("寫入完成");
                 Console.ReadKey();
+            }
+        }
+
+        /// <summary>
+        /// FileStream練習題
+        /// </summary>
+        static void P138()
+        {
+            //先複製的影片讀出來，再寫入指定的路徑
+            string source = @"C:\Users\User\Desktop\超可愛.mp4";
+            string target = @"C:\Users\User\Desktop\超可愛-copy.mp4";
+            CopyFile(source, target);
+
+            Console.WriteLine("已複製完成");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 用來複製檔案的方式
+        /// </summary>
+        /// <param name="source">原始檔案</param>
+        /// <param name="target">複製檔案</param>
+        public static void CopyFile(string source, string target)
+        {
+            //新增讀取資料流
+            using (FileStream ReadFS = new FileStream(source, FileMode.Open, FileAccess.Read))
+            {
+                //新增create資料流
+                using (FileStream WriteFS = new FileStream(target, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    //宣告每次讀取的量
+                    byte[] buffer = new byte[1024 * 1024 * 5];
+                    //透過循環，確保檔案都會被讀取到
+                    while (true)
+                    {
+                        //宣告本次讀取量
+                        int r = ReadFS.Read(buffer, 0, buffer.Length);
+                        //如果本次讀取量=0，表示沒有讀到資訊，跳出循環不再讀取
+                        if (r==0)
+                        {
+                            break;
+                        }
+                        WriteFS.Write(buffer, 0, r);
+                    }
+                    
+                }
             }
         }
     }
