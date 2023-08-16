@@ -260,6 +260,17 @@ namespace ConsoleApp1_P126
 
             Console.WriteLine(book);
             Console.ReadKey();
+
+            //用using(){}包起來，可以自行關閉釋放資料流
+            using (FileStream fsWrite = new FileStream(@"C:\Users\User\Desktop\137test.txt", FileMode.OpenOrCreate, FileAccess.Write))
+            {
+                Console.WriteLine("請輸入想要加入的文字");
+                string str = Console.ReadLine();
+                byte[] write_byte = Encoding.UTF8.GetBytes(str);
+                fsWrite.Write(write_byte,0,write_byte.Length);
+                Console.WriteLine("寫入完成");
+                Console.ReadKey();
+            }
         }
     }
 }
