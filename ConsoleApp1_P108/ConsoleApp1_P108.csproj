@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1_P98\ConsoleApp1_P98.csproj">
+    <ProjectReference Include="..\ConsoleApp1_P98\ConsoleApp1_P098.csproj">
       <Project>{8E383AD9-67E5-44B0-80C0-C5DB9FE0B067}</Project>
-      <Name>ConsoleApp1_P98</Name>
+      <Name>ConsoleApp1_P098</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

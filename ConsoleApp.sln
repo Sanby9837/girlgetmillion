@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp01_10", "ConsoleApp01_10\ConsoleApp01_10.csproj", "{ADBE0BC2-C958-4CDF-83E6-9992E9A88E61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp01_010", "ConsoleApp01_10\ConsoleApp01_010.csproj", "{ADBE0BC2-C958-4CDF-83E6-9992E9A88E61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryUsingTest", "ClassLibraryUsingTest\ClassLibraryUsingTest.csproj", "{5C233DB8-BE98-4A70-99E9-10DC23A53243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P11", "ConsoleApp1_P11\ConsoleApp1_P11.csproj", "{668FE3DA-717F-4CBF-A17C-72D7FB959754}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P011", "ConsoleApp1_P11\ConsoleApp1_P011.csproj", "{668FE3DA-717F-4CBF-A17C-72D7FB959754}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P19", "ConsoleApp1_P19\ConsoleApp1_P19.csproj", "{A4246666-C76E-441C-A205-91C9B9552812}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P019", "ConsoleApp1_P19\ConsoleApp1_P019.csproj", "{A4246666-C76E-441C-A205-91C9B9552812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P31", "ConsoleApp1_P31\ConsoleApp1_P31.csproj", "{CB0E6D92-A8CD-4268-8E1C-F724AF83AB95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P031", "ConsoleApp1_P31\ConsoleApp1_P031.csproj", "{CB0E6D92-A8CD-4268-8E1C-F724AF83AB95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P64", "ConsoleApp1_P64\ConsoleApp1_P64.csproj", "{C43D2C7B-8426-4F26-A04F-C0CC6722950B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P064", "ConsoleApp1_P64\ConsoleApp1_P064.csproj", "{C43D2C7B-8426-4F26-A04F-C0CC6722950B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P90FlyOut", "ConsoleApp1_P90FlyOut\ConsoleApp1_P90FlyOut.csproj", "{2982680E-2423-4FFE-B07C-C4F334A5D21B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P090FlyOut", "ConsoleApp1_P90FlyOut\ConsoleApp1_P090FlyOut.csproj", "{2982680E-2423-4FFE-B07C-C4F334A5D21B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P98", "ConsoleApp1_P98\ConsoleApp1_P98.csproj", "{8E383AD9-67E5-44B0-80C0-C5DB9FE0B067}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P098", "ConsoleApp1_P98\ConsoleApp1_P098.csproj", "{8E383AD9-67E5-44B0-80C0-C5DB9FE0B067}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1_P108", "ConsoleApp1_P108\ConsoleApp1_P108.csproj", "{678DD684-E805-435D-82F6-D8A53087DD72}"
 EndProject
