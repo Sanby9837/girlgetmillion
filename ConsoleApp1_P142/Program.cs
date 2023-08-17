@@ -18,7 +18,7 @@ namespace ConsoleApp1_P142
             Console.ReadKey();
 
             Console.WriteLine("2.請輸入正方形的長");
-            double sh_l = Convert.ToDouble(Console.ReadLine());
+             double sh_l = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("3.請輸入正方形的寬");
             double sh_w = Convert.ToDouble(Console.ReadLine());
             Shape shape1 = new Spuare(sh_l, sh_w) ;
