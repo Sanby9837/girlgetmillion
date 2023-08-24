@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1_P158_Store
 {
-    internal class Samsung
+    internal class Samsung:Product
     {
+        public Samsung(double price, double count, string id) : base(price,count,id)
+        {
+
+        }
     }
 }

@@ -7,7 +7,7 @@
     <ProjectGuid>{6989C2CF-8904-44BF-8AE5-7B1355EC470B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ConsoleApp1_P158_Store</RootNamespace>
-    <AssemblyName>ConsoleApp1_P158_Store</AssemblyName>
+    <AssemblyName>ConsoleApp1_P158 Store</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acer.cs" />
+    <Compile Include="Banana.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salt.cs" />
+    <Compile Include="Samsung.cs" />
+    <Compile Include="StoreHouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

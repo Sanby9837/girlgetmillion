@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1_P158_Store
 {
-    internal class Banana
+    internal class Banana : Product
     {
+        public Banana(double price, double count, string id) : base(price, count, id)
+        {
+
+        }
     }
 }
