@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1_P158_Store
 {
-    internal class DiscountNormal
+    internal class DiscountNormal : Discount
     {
+        public override double GetTotalMoney(double price)
+        {
+            return price;
+        }
     }
 }

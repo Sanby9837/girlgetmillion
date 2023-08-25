@@ -10,6 +10,11 @@ namespace ConsoleApp1_P158_Store
     {
         static void Main(string[] args)
         {
+            SuperMarket sm = new SuperMarket();
+            sm.ShowPros();
+            Console.ReadKey();
+            sm.AskBuying();
+            Console.ReadKey();
         }
     }
 }

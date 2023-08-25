@@ -8,7 +8,7 @@ namespace ConsoleApp1_P158_Store
 {
     internal class Salt : Product
     {
-        public Salt(double price, double count, string id) : base(price, count, id)
+        public Salt(double price, string name, string id) : base(price, name, id)
         {
         }
     }

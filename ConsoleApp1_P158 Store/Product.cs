@@ -14,7 +14,7 @@ namespace ConsoleApp1_P158_Store
             set;
         }
 
-        public double Count
+        public string Name
         {
             get;
             set;
@@ -26,10 +26,10 @@ namespace ConsoleApp1_P158_Store
             set;
         }
 
-        public Product(double price, double count, string id) 
+        public Product(double price, string name, string id)
         {
             this.Price = price;
-            this.Count = count;
+            this.Name = name;
             this.ID = id;
         }
     }

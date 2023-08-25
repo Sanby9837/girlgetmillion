@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1_P158_Store
 {
-    internal class DiscountRate
+    internal class DiscountRate : Discount
     {
+        public double Rate
+        {
+            get;
+            set;
+        }
+        public DiscountRate(double rate)
+        {
+            this.Rate = rate;
+        }
+        public override double GetTotalMoney(double price)
+        {
+            return price * this.Rate;
+        }
     }
 }

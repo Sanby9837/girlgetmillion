@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1_P158_Store
 {
-    internal class Discount
+    abstract class Discount
     {
+        public abstract double GetTotalMoney(double price);
     }
 }

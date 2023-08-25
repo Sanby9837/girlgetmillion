@@ -8,7 +8,7 @@ namespace ConsoleApp1_P158_Store
 {
     internal class Samsung:Product
     {
-        public Samsung(double price, double count, string id) : base(price,count,id)
+        public Samsung(double price, string name, string id) : base(price,name,id)
         {
 
         }

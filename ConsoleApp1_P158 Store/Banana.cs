@@ -8,7 +8,7 @@ namespace ConsoleApp1_P158_Store
 {
     internal class Banana : Product
     {
-        public Banana(double price, double count, string id) : base(price, count, id)
+        public Banana(double price, string name, string id) : base(price, name, id)
         {
 
         }
