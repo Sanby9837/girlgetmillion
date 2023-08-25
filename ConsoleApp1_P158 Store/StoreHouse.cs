@@ -10,6 +10,13 @@ namespace ConsoleApp1_P158_Store
     {
         List<List<Product>> list = new List<List<Product>>();
 
+        public void ShowPros()
+        {
+            foreach (var item in list)
+            {
+                Console.WriteLine($"{item[0].Name}有 {item.Count} 個， {item[0].Price} 元/個");
+            }
+        }
 
         public StoreHouse()
         {
@@ -27,16 +34,16 @@ namespace ConsoleApp1_P158_Store
                 switch (strType)
                 {
                     case "Acer":
-                        list[0].Add(new Acer(27000, 1, Guid.NewGuid().ToString()));
+                        list[0].Add(new Acer(27000, "Acer筆電", Guid.NewGuid().ToString()));
                         break;
                     case "Samsung":
-                        list[1].Add(new Samsung(37000, 1, Guid.NewGuid().ToString()));
+                        list[1].Add(new Samsung(37000, "Samsung手機", Guid.NewGuid().ToString()));
                         break;
                     case "Salt":
-                        list[2].Add(new Salt(45, 1, Guid.NewGuid().ToString()));
+                        list[2].Add(new Salt(45, "鹽巴", Guid.NewGuid().ToString()));
                         break;
                     case "Banana":
-                        list[3].Add(new Banana(99, 1, Guid.NewGuid().ToString()));
+                        list[3].Add(new Banana(99, "香蕉", Guid.NewGuid().ToString()));
                         break;
                 }
             }
@@ -83,7 +90,7 @@ namespace ConsoleApp1_P158_Store
                         }
                         break;
                     case "Banana":
-                        if (list[3].Count ==0)
+                        if (list[3].Count == 0)
                         {
                             Console.WriteLine("商品缺貨");
                         }
