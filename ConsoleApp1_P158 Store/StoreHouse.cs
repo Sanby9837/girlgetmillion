@@ -10,6 +10,9 @@ namespace ConsoleApp1_P158_Store
     {
         List<List<Product>> list = new List<List<Product>>();
 
+        /// <summary>
+        /// 顯示物品
+        /// </summary>
         public void ShowPros()
         {
             foreach (var item in list)
@@ -27,6 +30,11 @@ namespace ConsoleApp1_P158_Store
             list.Add(new List<Product>());
         }
 
+        /// <summary>
+        /// 進貨
+        /// </summary>
+        /// <param name="strType">類型</param>
+        /// <param name="count">數量</param>
         public void Input(string strType, int count)
         {
             for (int i = 0; i < count; i++)
@@ -49,6 +57,12 @@ namespace ConsoleApp1_P158_Store
             }
         }
 
+        /// <summary>
+        /// 出貨
+        /// </summary>
+        /// <param name="strType">品項</param>
+        /// <param name="count">數量</param>
+        /// <returns></returns>
         public Product[] Output(string strType, int count)
         {
             Product[] pros = new Product[count];
