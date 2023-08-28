@@ -53,7 +53,7 @@ namespace ConsoleApp1_P158_Store
             //取貨
             Product[] pros = ck.Output(strType, count);
 
-            //待優化--可以購買多個品項
+            //待優化--可以購買多個品項、缺貨處理方式
             //while (true)
             //{
             //    Console.WriteLine("請問還有需要買什麼東西嗎? 請輸入y或n");
@@ -101,6 +101,8 @@ namespace ConsoleApp1_P158_Store
             Console.WriteLine($"打折後，應付{totalMoney}");
             Console.ReadKey(true);
             Console.WriteLine();
+
+            //購物明細
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"您好，購物明細請查收");
             Console.ForegroundColor = ConsoleColor.White;
