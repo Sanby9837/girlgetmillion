@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,10 @@ namespace ConsoleApp1_P158_Store
         /// </summary>
         public SuperMarket()
         {
-            ck.Input("Acer", 1000);
-            ck.Input("Samsung", 2000);
-            ck.Input("Salt", 1000);
-            ck.Input("Banana", 2000);
+            ck.Input("acer", 1000);
+            ck.Input("samsung", 2000);
+            ck.Input("salt", 1000);
+            ck.Input("banana", 2000);
         }
 
         /// <summary>
@@ -26,15 +27,33 @@ namespace ConsoleApp1_P158_Store
         /// </summary>
         public void AskBuying()
         {
+            Console.Write("我們有");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Acer,Samsung,Salt,Banana");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+
             Console.WriteLine("請問您需要什麼呢?");
-            Console.WriteLine("我們有Acer,Samsung,Salt,Banana");
-            string strType = Console.ReadLine();
+            string strType = Console.ReadLine().ToLower();
+            while (strType != "acer" && strType != "samsung" && strType != "salt" && strType != "banana")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("請輸入Acer or Samsung or Salt or Banana");
+                Console.ForegroundColor = ConsoleColor.White;
+                strType = Console.ReadLine().ToLower();
+                if (strType == "acer" || strType == "samsung" || strType == "salt" || strType == "banana")
+                {
+                    break;
+                }
+            }
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("您需要幾個呢?");
             int count = Convert.ToInt32(Console.ReadLine());
 
             //取貨
             Product[] pros = ck.Output(strType, count);
 
+            //待優化--可以購買多個品項
             //while (true)
             //{
             //    Console.WriteLine("請問還有需要買什麼東西嗎? 請輸入y或n");
@@ -62,20 +81,60 @@ namespace ConsoleApp1_P158_Store
             //算錢
             double price = GetMoney(pros);
             Console.WriteLine($"您需要支付{price}元");
-            Console.WriteLine($"請輸入打折方式 1. Normal 2. 8折 3. 買千送百");
+            Console.WriteLine($"請輸入打折方式 1.(Normal) 2.(8折) 3.(買千送百)");
             string intput = Console.ReadLine();
-
+            while (intput != "1" && intput != "2" && intput != "3")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("請輸入1或2或3");
+                Console.ForegroundColor = ConsoleColor.White;
+                intput = Console.ReadLine();
+                if (intput == "1" || intput == "2" || intput == "3")
+                {
+                    break;
+                }
+            }
             //根據輸入的資料，獲得一個打折的對象
             Discount dis = GetDiscount(intput);
             double totalMoney = dis.GetTotalMoney(price);
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"打折後，應付{totalMoney}");
-
+            Console.ReadKey(true);
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"您好，購物明細請查收");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Dictionary<string, int> ds = new Dictionary<string, int>();
+            ds.Add("Acer筆電", 0);
+            ds.Add("Samsung手機", 0);
+            ds.Add("鹽巴", 0);
+            ds.Add("香蕉", 0);
             foreach (var item in pros)
             {
-                Console.WriteLine($"購買物品：{item.Name}  單價：{item.Price} ID：{item.ID}");
+                switch (item.Name)
+                {
+                    case "Acer筆電":
+                        ds["Acer筆電"] += 1;
+                        break;
+                    case "Samsung手機":
+                        ds["Samsung手機"] += 1;
+                        break;
+                    case "鹽巴":
+                        ds["鹽巴"] += 1;
+                        break;
+                    case "香蕉":
+                        ds["香蕉"] += 1;
+                        break;
+                }
             }
-            Console.ReadKey();
+            foreach (string key in ds.Keys)
+            {
+                if (ds[key] > 0)
+                {
+                    Console.WriteLine($"商品名稱：{key}，數量：{ds[key]}");
+                }
+            }
         }
 
         /// <summary>

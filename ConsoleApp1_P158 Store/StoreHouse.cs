@@ -19,6 +19,7 @@ namespace ConsoleApp1_P158_Store
             {
                 Console.WriteLine($"{item[0].Name}有 {item.Count} 個， {item[0].Price} 元/個");
             }
+            Console.WriteLine("----------------------------------------------------");
         }
 
         public StoreHouse()
@@ -41,16 +42,16 @@ namespace ConsoleApp1_P158_Store
             {
                 switch (strType)
                 {
-                    case "Acer":
+                    case "acer":
                         list[0].Add(new Acer(27000, "Acer筆電", Guid.NewGuid().ToString()));
                         break;
-                    case "Samsung":
+                    case "samsung":
                         list[1].Add(new Samsung(37000, "Samsung手機", Guid.NewGuid().ToString()));
                         break;
-                    case "Salt":
+                    case "salt":
                         list[2].Add(new Salt(45, "鹽巴", Guid.NewGuid().ToString()));
                         break;
-                    case "Banana":
+                    case "banana":
                         list[3].Add(new Banana(99, "香蕉", Guid.NewGuid().ToString()));
                         break;
                 }
@@ -70,7 +71,7 @@ namespace ConsoleApp1_P158_Store
             {
                 switch (strType)
                 {
-                    case "Acer":
+                    case "acer":
                         if (list[0].Count == 0)
                         {
                             Console.WriteLine("商品缺貨");
@@ -81,7 +82,7 @@ namespace ConsoleApp1_P158_Store
                             list[0].RemoveAt(0);
                         }
                         break;
-                    case "Samsung":
+                    case "samsung":
                         if (list[1].Count == 0)
                         {
                             Console.WriteLine("商品缺貨");
@@ -92,7 +93,7 @@ namespace ConsoleApp1_P158_Store
                             list[1].RemoveAt(0);
                         }
                         break;
-                    case "Salt":
+                    case "salt":
                         if (list[2].Count == 0)
                         {
                             Console.WriteLine("商品缺貨");
@@ -103,7 +104,7 @@ namespace ConsoleApp1_P158_Store
                             list[2].RemoveAt(0);
                         }
                         break;
-                    case "Banana":
+                    case "banana":
                         if (list[3].Count == 0)
                         {
                             Console.WriteLine("商品缺貨");

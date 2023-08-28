@@ -12,9 +12,9 @@ namespace ConsoleApp1_P158_Store
         {
             SuperMarket sm = new SuperMarket();
             sm.ShowPros();
-            Console.ReadKey();
+            Console.ReadKey(true);
             sm.AskBuying();
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
     }
 }
